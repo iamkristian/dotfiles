@@ -1,0 +1,23 @@
+#!/bin/zsh
+
+if [[ $platform == 'linux' ]]; then
+  alias ls="ls --color=auto $*"
+  alias vim='/usr/bin/vim -v'
+elif [[ $platform == 'darwin' ]]; then
+  alias ls="ls -G $*"
+  alias vim='/usr/bin/mvim -v'
+fi
+
+alias la="ls -la $*"
+
+# git alias's
+alias gs='git status'
+alias gp='git pull'
+
+# Shell tools
+alias mytop='top -s1 -o cpu -R -F'
+
+# Ruby
+alias be="bundle exec $*"
+
+#alias ctags="`brew --prefix`/bin/ctags"

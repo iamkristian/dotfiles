@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+setopt nocorrect nocorrectall
+unsetopt correct_all
+# make the cmd line right vi style
+set -o vi
+
+export LC_ALL='en_US.UTF-8'
+#export LANG='en_US.UTF-8'
+export TERM='xterm-256color'
+export GREP_OPTIONS="--color=always"
+export EDITOR='vim'

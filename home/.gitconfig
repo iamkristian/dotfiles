@@ -1,0 +1,50 @@
+[user]
+	name = Kristian Rasmussen
+	email = kr@iamkristian.com
+[alias]
+	st = status
+	pom = push origin master
+	ci = commit
+  b = branch
+  di = diff
+  dc = diff --cached
+  pullff = pull --ff-only
+  noff = merge --ff-only
+  aa = add --all
+  co = checkout
+  # Fancy logging.
+  #   h = head
+  #   hp = head with patch
+  #   r = recent commits, only current branch
+  #   ra = recent commits, all reachable refs
+  #   l = all commits, only current branch
+  #   la = all commits, all reachable refs
+  head = !git l -1
+  h = !git head
+  hp = "!source ~/.githelpers && show_git_head"
+  r = !git l -30
+  ra = !git r --all
+  l = "!source ~/.githelpers && pretty_git_log"
+  la = !git l --all
+
+[rerere]
+  enabled=1
+[color]
+	ui = auto
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = /usr/bin/vim
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
+[push]
+	default = upstream
+[branch]
+	autosetuprebase = always
+[github]
+	user = iamkristian
+[gist]
+	browse = yes
