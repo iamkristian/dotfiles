@@ -1,2 +1,3 @@
 #!/bin/zsh
-ZSH_THEME="~/.zsh/iamkristian"
+ZSH_CUSTOM=$HOME/.zsh
+ZSH_THEME="iamkristian"
