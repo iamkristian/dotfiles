@@ -1,9 +1,10 @@
 #!/bin/zsh
 
-if [[ $platform == 'linux' ]]; then
+platform=`uname`
+if [[ "$platform" == 'Linux' ]]; then
   alias ls="ls --color=auto $*"
   alias vim='/usr/bin/vim -v'
-elif [[ $platform == 'darwin' ]]; then
+elif [[ "$platform" == 'Darwin' ]]; then
   alias ls="ls -G $*"
   alias vim='/usr/local/bin/mvim -v'
 fi
