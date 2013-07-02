@@ -5,7 +5,7 @@ if [[ $platform == 'linux' ]]; then
   alias vim='/usr/bin/vim -v'
 elif [[ $platform == 'darwin' ]]; then
   alias ls="ls -G $*"
-  alias vim='/usr/bin/mvim -v'
+  alias vim='/usr/local/bin/mvim -v'
 fi
 
 alias la="ls -la $*"
