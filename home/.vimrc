@@ -163,7 +163,7 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-autocmd BufWritePre *.rb,*.js,*.erb,*.scss,*.css,*.md,*.vim,*.xml :%s/\s\+$//e
+autocmd BufWritePre *.rb,*.js,*.erb,*.scss,*.css,*.md,*.vim,*.xml,*.php %s/\s\+$//e
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " OPEN FILES IN DIRECTORY OF CURRENT FILE
