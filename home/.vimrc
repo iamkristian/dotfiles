@@ -11,7 +11,7 @@ call pathogen#helptags()
 set nocompatible
 " Allow unsaved buffers and undo marks for them
 set tabstop=2 shiftwidth=2
-set cursorline
+set cursorline cursorcolumn
 set expandtab
 set backspace=indent,eol,start
 set autoindent
@@ -136,6 +136,10 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+
+imap <C-J> <Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CTRL-p mappings
