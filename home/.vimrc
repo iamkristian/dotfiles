@@ -144,7 +144,7 @@ smap <C-J> <Plug>snipMateNextOrTrigger
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CTRL-p mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set wildignore+=*/tmp/*,*/vendor/*
+set wildignore+=*/tmp/*,*/vendor/*,*/target/*
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
@@ -158,6 +158,7 @@ let g:ctrlp_max_files = 15000
 let g:ctrlp_use_caching=1
 let g:ctrlp_clear_cache_on_exit=1
 let g:ctrlp_cache_dir=$HOME.'/.cache/ctrlp'
+let g:ctrlp_follow_symlinks = 1
 "let g:ctrlp_working_path_mode = 2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
