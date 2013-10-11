@@ -48,3 +48,5 @@
 	user = iamkristian
 [gist]
 	browse = yes
+[mergetool]
+	keepBackup = true
