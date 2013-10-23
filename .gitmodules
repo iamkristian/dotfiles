@@ -97,3 +97,6 @@
 [submodule "home/.vim/bundle/ultisnips"]
 	path = home/.vim/bundle/ultisnips
 	url = https://github.com/rhardih/ultisnips
+[submodule "home/.vim/bunde/vim-pasta"]
+	path = home/.vim/bunde/vim-pasta
+	url = https://github.com/sickill/vim-pasta
