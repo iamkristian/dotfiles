@@ -79,3 +79,21 @@
 [submodule "home/.vim/bundle/mustache"]
 	path = home/.vim/bundle/mustache
 	url = git://github.com/juvenn/mustache.vim.git
+[submodule "home/.vim/bundle/turbux"]
+	path = home/.vim/bundle/turbux
+	url = https://github.com/jgdavey/vim-turbux
+[submodule "home/.vim/bundle/vimux"]
+	path = home/.vim/bundle/vimux
+	url = https://github.com/benmills/vimux
+[submodule "home/.vim/bundle/elixir"]
+	path = home/.vim/bundle/elixir
+	url = https://github.com/elixir-lang/vim-elixir
+[submodule "home/.vim/bundle/vim-javascript"]
+	path = home/.vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript
+[submodule "home/.vim/bundle/vim-sparkup"]
+	path = home/.vim/bundle/vim-sparkup
+	url = https://github.com/tristen/vim-sparkup
+[submodule "home/.vim/bundle/ultisnips"]
+	path = home/.vim/bundle/ultisnips
+	url = https://github.com/rhardih/ultisnips
