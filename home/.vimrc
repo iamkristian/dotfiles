@@ -176,7 +176,11 @@ autocmd BufWritePre *.rb,*.js,*.erb,*.scss,*.css,*.md,*.vim,*.xml,*.php %s/\s\+$
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>s :vsplit %%
 map <leader>e :tabe %%
-map <leader>v :view %%
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tmux bindings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>vp :VimuxPromptCommand<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Faster tab navigation
@@ -283,8 +287,11 @@ nnoremap <leader>. :call OpenTestAlternate()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUNNING TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>t :call RunTestFile()<cr>
-map <leader>T :call RunNearestTest()<cr>
+" This is done nicely by turbux
+"map <leader>t :call RunTestFile()<cr>
+"map <leader>T :call RunNearestTest()<cr>
+let g:turbux_command_prefix = 'bundle exec'
+let g:turbux_command_rspec  = 'rspec -d'
 map <leader>a :call RunTests('')<cr>
 map <leader>c :w\|:!script/features<cr>
 map <leader>w :w\|:!script/features --profile wip<cr>
