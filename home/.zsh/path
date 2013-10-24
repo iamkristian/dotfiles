@@ -3,5 +3,6 @@
 # Homebrew
 if [ -d /usr/local/Cellar ]; then
   export PATH=/usr/local/bin:$PATH
+  export PATH=$PATH:~/bin
   export PATH=$PATH:/usr/local/sbin
 fi
