@@ -36,7 +36,7 @@
 	url = git://github.com/tpope/vim-markdown.git
 [submodule "home/.vim/bundle/vim-surround"]
 	path = home/.vim/bundle/vim-surround
-	url = git://github.com/tpope/vim-surround.git
+	url = https://github.com/tpope/vim-surround
 [submodule "home/.vim/bundle/vim-matchit"]
 	path = home/.vim/bundle/vim-matchit
 	url = git://github.com/tsaleh/vim-matchit.git
@@ -99,4 +99,7 @@
 	url = https://github.com/rhardih/ultisnips
 [submodule "home/.vim/bunde/vim-pasta"]
 	path = home/.vim/bunde/vim-pasta
+	url = https://github.com/sickill/vim-pasta
+[submodule "home/.vim/bundle/vim-pasta"]
+	path = home/.vim/bundle/vim-pasta
 	url = https://github.com/sickill/vim-pasta
