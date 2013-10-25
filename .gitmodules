@@ -103,3 +103,6 @@
 [submodule "home/.vim/bundle/vim-pasta"]
 	path = home/.vim/bundle/vim-pasta
 	url = https://github.com/sickill/vim-pasta
+[submodule "home/.vim/bundle/gundo"]
+	path = home/.vim/bundle/gundo
+	url = http://github.com/sjl/gundo.vim.git
