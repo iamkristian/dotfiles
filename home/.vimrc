@@ -32,7 +32,7 @@ let mapleader=","
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Statusline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%y[%{&ff}]\ %=%-0.15{fugitive#statusline()}\ %=%-12.12{rvm#statusline()}%=%-8(\ %l,%c-%v\ %)%P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%=%y[%{&ff}]\ %=%-0.15{fugitive#statusline()}\ %=%-8(\ %l,%c-%v\ %)%P
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -55,6 +55,12 @@ autocmd FileType ruby,haml,eruby,yaml,sass,cucumber,html,php,javascript set ai s
 autocmd! CmdwinEnter * :unmap <cr>
 autocmd! CmdwinLeave * :call MapCR()
 augroup END
+
+augroup sparkup_types
+  autocmd!
+  autocmd FileType html,php,eruby runtime! ftplugin/html/sparkup.vim
+augroup END
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and fonts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -145,7 +151,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CTRL-p mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set wildignore+=*/tmp/*,*/vendor/*,*/target/*
+set wildignore+=*/.git/*,*/tmp/*,*/vendor/*,*/target/*
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
@@ -169,7 +175,7 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-autocmd BufWritePre *.rb,*.js,*.erb,*.scss,*.css,*.md,*.vim,*.xml,*.php %s/\s\+$//e
+autocmd BufWritePre *.rb,*.js,*.erb,*.scss,*.css,*.md,*.vim,*.xml,*.php,*.html %s/\s\+$//e
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " OPEN FILES IN DIRECTORY OF CURRENT FILE
@@ -291,8 +297,8 @@ nnoremap <leader>. :call OpenTestAlternate()<cr>
 " This is done nicely by turbux
 "map <leader>t :call RunTestFile()<cr>
 "map <leader>T :call RunNearestTest()<cr>
-let g:turbux_command_prefix = 'bundle exec'
-let g:turbux_command_rspec  = 'rspec -d'
+let g:turbux_command_prefix = 'time'
+let g:turbux_command_rspec  = 'rspec --fail-fast -c'
 map <leader>a :call RunTests('')<cr>
 map <leader>c :w\|:!script/features<cr>
 map <leader>w :w\|:!script/features --profile wip<cr>
@@ -339,7 +345,7 @@ function! RunTests(filename)
         if filereadable("script/test")
             exec ":!script/test " . a:filename
         elseif filereadable("Gemfile")
-            exec ":!bundle exec rspec -d --color " . a:filename
+            exec ":!script/specs " . a:filename
         else
             exec ":!rspec -d --color " . a:filename
         end

@@ -21,4 +21,13 @@ alias mytop='top -s1 -o cpu -R -F'
 # Ruby
 alias be="bundle exec $*"
 
+if [[ -f ~/.rbenv/bin/rbenv ]]; then
+  alias rb="rbenv $*"
+fi
+
 #alias ctags="`brew --prefix`/bin/ctags"
+
+alias global-off='sudo mv /Applications/GlobalProtect{,OFF}.app && pkill -9 -f GlobalProtect'
+alias global-on='sudo mv /Applications/GlobalProtect{OFF,}.app'
+alias casper-off='sudo mv /usr/sbin/jamfAgent{,-off} && sudo mv /usr/sbin/jamf{,-off} && sudo pkill -9 jamf'
+alias casper-on='sudo mv /usr/sbin/jamfAgent{-off,} && sudo mv /usr/sbin/jamf{-off,}'
