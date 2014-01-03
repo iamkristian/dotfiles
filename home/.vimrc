@@ -129,11 +129,13 @@ set guicursor+=n-v-c:blinkon0
 set guicursor+=n-v-c:blinkwait10
 set guicursor+=i:blinkwait10
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Clojure setup
+" Airline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:slimv_swank_clojure = '! xterm -e lein swank &'
-let vimclojure#FuzzyIndent = 1
+let g:airline_theme='luna'
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vimdiff options

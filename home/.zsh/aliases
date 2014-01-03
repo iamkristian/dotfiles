@@ -3,10 +3,8 @@
 platform=`uname`
 if [[ "$platform" == 'Linux' ]]; then
   alias ls="ls --color=auto $*"
-  alias vim='/usr/bin/vim -v'
 elif [[ "$platform" == 'Darwin' ]]; then
   alias ls="ls -G $*"
-  alias vim='/usr/local/bin/mvim -v'
 fi
 
 alias la="ls -la $*"
@@ -21,7 +19,7 @@ alias mytop='top -s1 -o cpu -R -F'
 # Ruby
 alias be="bundle exec $*"
 
-if [[ -f ~/.rbenv/bin/rbenv ]]; then
+if [[ -f /usr/local/opt/rbenv/bin/rbenv ]]; then
   alias rb="rbenv $*"
 fi
 
