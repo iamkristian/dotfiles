@@ -79,12 +79,6 @@
 [submodule "home/.vim/bundle/mustache"]
 	path = home/.vim/bundle/mustache
 	url = git://github.com/juvenn/mustache.vim.git
-[submodule "home/.vim/bundle/turbux"]
-	path = home/.vim/bundle/turbux
-	url = https://github.com/jgdavey/vim-turbux
-[submodule "home/.vim/bundle/vimux"]
-	path = home/.vim/bundle/vimux
-	url = https://github.com/benmills/vimux
 [submodule "home/.vim/bundle/elixir"]
 	path = home/.vim/bundle/elixir
 	url = https://github.com/elixir-lang/vim-elixir
@@ -109,3 +103,12 @@
 [submodule "home/.vim/bundle/vim-airline"]
 	path = home/.vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline
+[submodule "home/.vim/bundle/tmuxline"]
+	path = home/.vim/bundle/tmuxline
+	url = https://github.com/edkolev/tmuxline.vim
+[submodule "home/.vim/bundle/vimux"]
+	path = home/.vim/bundle/vimux
+	url = https://github.com/benmills/vimux
+[submodule "home/.vim/bundle/turbux"]
+	path = home/.vim/bundle/turbux
+	url = https://github.com/jgdavey/vim-turbux
