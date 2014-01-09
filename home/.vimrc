@@ -29,11 +29,6 @@ set virtualedit=all
 set laststatus=2
 filetype plugin indent on
 let mapleader=","
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Statusline
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%=%y[%{&ff}]\ %=%-0.15{fugitive#statusline()}\ %=%-8(\ %l,%c-%v\ %)%P
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocmds
@@ -60,6 +55,11 @@ augroup sparkup_types
   autocmd!
   autocmd FileType html,php,eruby runtime! ftplugin/html/sparkup.vim
 augroup END
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tags
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set tags=.tags,.gemtags
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and fonts
@@ -298,5 +298,5 @@ nnoremap <leader>. :call OpenTestAlternate()<cr>
 " RUNNING TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " This is done nicely by turbux
-let g:turbux_command_prefix = 'time'
+let g:turbux_command_prefix = 'time rescue'
 let g:turbux_command_rspec  = 'rspec --fail-fast -c'
