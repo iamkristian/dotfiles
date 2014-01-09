@@ -39,3 +39,5 @@ Thumbs.db
 
 # Ignoring ctags
 tags
+.tags
+.gemtags
