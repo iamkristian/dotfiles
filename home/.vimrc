@@ -17,7 +17,6 @@ set backspace=indent,eol,start
 set autoindent
 set incsearch
 set hlsearch
-set switchbuf=usetab
 set ignorecase smartcase
 set showmatch
 set vb t_vb=
@@ -27,6 +26,7 @@ set winwidth=79
 set cc=79
 set virtualedit=all
 set laststatus=2
+set shell=zsh
 filetype plugin indent on
 let mapleader=","
 
@@ -300,3 +300,17 @@ nnoremap <leader>. :call OpenTestAlternate()<cr>
 " This is done nicely by turbux
 let g:turbux_command_prefix = 'time rescue'
 let g:turbux_command_rspec  = 'rspec --fail-fast -c'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MULTIPURPOSE TAB KEY
+" Indent if we're at the beginning of a line. Else, do completion.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-n>

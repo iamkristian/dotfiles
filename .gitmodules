@@ -58,9 +58,6 @@
 [submodule "home/.vim/bundle/vim-bundler"]
 	path = home/.vim/bundle/vim-bundler
 	url = https://github.com/tpope/vim-bundler.git
-[submodule "home/.vim/bundle/vim-rvm"]
-	path = home/.vim/bundle/vim-rvm
-	url = https://github.com/tpope/vim-rvm.git
 [submodule "home/.vim/bundle/ctrlp.vim"]
 	path = home/.vim/bundle/ctrlp.vim
 	url = git://github.com/kien/ctrlp.vim.git
