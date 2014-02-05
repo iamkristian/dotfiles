@@ -298,7 +298,7 @@ nnoremap <leader>. :call OpenTestAlternate()<cr>
 " RUNNING TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " This is done nicely by turbux
-let g:turbux_command_prefix = 'time rescue'
+let g:turbux_command_prefix = 'time'
 let g:turbux_command_rspec  = 'rspec --fail-fast -c'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
