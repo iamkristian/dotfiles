@@ -26,6 +26,8 @@
   ra = !git r --all
   l = "!source ~/.githelpers && pretty_git_log"
   la = !git l --all
+  branch-name = !"git for-each-ref --format=\"%(refname:short)\" $(git symbolic-ref HEAD)"
+  zpush = !"git push -u origin `git branch-name`:kristian/`git branch-name`"
 
 [rerere]
   enabled=1
