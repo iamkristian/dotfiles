@@ -120,17 +120,6 @@ catch
 endtry
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Cursor setup
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set guicursor=n-v-c:block-Cursor
-set guicursor=n-v-c:ver100-Cursor
-set guicursor+=i:ver100-iCursor
-set guicursor+=n-v-c:blinkon0
-set guicursor+=n-v-c:blinkwait10
-set guicursor+=i:blinkwait10
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_theme='luna'
@@ -146,14 +135,6 @@ let g:vimrubocop_config = '~/.rubocop.yml'
 " Vimdiff options
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set diffopt=iwhite
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Textmate snippets
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CTRL-p mappings
@@ -196,17 +177,6 @@ map <leader>e :tabe %%
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>vp :VimuxPromptCommand<CR>
 map <Leader>a :call VimuxRunCommand("time rspec --fail-fast -c spec "))<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Faster tab navigation
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>[ :tabp<cr>
-map <leader>] :tabn<cr>
-map <leader>1 :tabn 1<cr>
-map <leader>2 :tabn 2<cr>
-map <leader>3 :tabn 3<cr>
-map <leader>4 :tabn 4<cr>
-map <leader>5 :tabn 5<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE
@@ -306,17 +276,3 @@ nnoremap <leader>. :call OpenTestAlternate()<cr>
 " This is done nicely by turbux
 let g:turbux_command_prefix = 'time'
 let g:turbux_command_rspec  = 'rspec --fail-fast -c'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MULTIPURPOSE TAB KEY
-" Indent if we're at the beginning of a line. Else, do completion.
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"function! InsertTabWrapper()
-"    let col = col('.') - 1
-"    if !col || getline('.')[col - 1] !~ '\k'
-"        return "\<tab>"
-"    else
-"        return "\<c-p>"
-"    endif
-"endfunction
-"inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-"inoremap <s-tab> <c-n>
