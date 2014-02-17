@@ -67,9 +67,6 @@
 [submodule "home/.vim/bundle/vim-colors-solarized"]
 	path = home/.vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "home/.vim/bundle/vim-coffee-script"]
-	path = home/.vim/bundle/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
 [submodule "home/.vim/bundle/xterm-color-table"]
 	path = home/.vim/bundle/xterm-color-table
 	url = git://github.com/guns/xterm-color-table.vim.git
@@ -82,9 +79,6 @@
 [submodule "home/.vim/bundle/vim-javascript"]
 	path = home/.vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript
-[submodule "home/.vim/bundle/vim-sparkup"]
-	path = home/.vim/bundle/vim-sparkup
-	url = https://github.com/tristen/vim-sparkup
 [submodule "home/.vim/bundle/ultisnips"]
 	path = home/.vim/bundle/ultisnips
 	url = https://github.com/rhardih/ultisnips
@@ -112,3 +106,9 @@
 [submodule "home/.vim/bundle/vim-rbenv"]
 	path = home/.vim/bundle/vim-rbenv
 	url = git://github.com/tpope/vim-rbenv.git
+[submodule "home/.vim/bundle/vim-rubocop"]
+	path = home/.vim/bundle/vim-rubocop
+	url = https://github.com/ngmy/vim-rubocop
+[submodule "home/.vim/bundle/supertab"]
+	path = home/.vim/bundle/supertab
+	url = https://github.com/ervandew/supertab

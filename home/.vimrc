@@ -138,6 +138,11 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Rubocop
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vimrubocop_config = '~/.rubocop.yml'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vimdiff options
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set diffopt=iwhite
@@ -263,6 +268,7 @@ map <leader>gs :CtrlPClearCache<cr>\|:CtrlP spec<cr>
 map <leader>ga :CtrlPClearCache<cr>\|:CtrlP app/assets<cr>
 map <leader>f :CtrlP<cr>
 map <leader>F :CtrlP %%<cr>
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SWITCH BETWEEN TEST AND PRODUCTION CODE
@@ -304,13 +310,13 @@ let g:turbux_command_rspec  = 'rspec --fail-fast -c'
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <s-tab> <c-n>
+"function! InsertTabWrapper()
+"    let col = col('.') - 1
+"    if !col || getline('.')[col - 1] !~ '\k'
+"        return "\<tab>"
+"    else
+"        return "\<c-p>"
+"    endif
+"endfunction
+"inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+"inoremap <s-tab> <c-n>
