@@ -238,7 +238,6 @@ map <leader>gs :CtrlPClearCache<cr>\|:CtrlP spec<cr>
 map <leader>ga :CtrlPClearCache<cr>\|:CtrlP app/assets<cr>
 map <leader>f :CtrlP<cr>
 map <leader>F :CtrlP %%<cr>
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SWITCH BETWEEN TEST AND PRODUCTION CODE
@@ -275,4 +274,4 @@ nnoremap <leader>. :call OpenTestAlternate()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " This is done nicely by turbux
 let g:turbux_command_prefix = 'time'
-let g:turbux_command_rspec  = 'rspec --fail-fast -c'
+let g:turbux_command_rspec  = 'bundle exec rspec --fail-fast -c'
