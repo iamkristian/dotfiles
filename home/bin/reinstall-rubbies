@@ -1,0 +1,12 @@
+#!/bin/zsh
+echo "Updating homebrew"
+brew update
+echo "Updating ruby-build"
+brew upgrade ruby-build
+
+versions=(1.9.2-p320 1.9.3-p448 2.0.0-p353 2.1.1 jruby-1.7.6)
+for version in $versions; do
+  echo "Reinstalling "$version"\n=========================";
+  rbenv install -f $version
+done
+
