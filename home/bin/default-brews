@@ -1,0 +1,13 @@
+#!/bin/bash
+brew install -v \
+ reattach-to-user-name-space \
+ tmux \
+ vim \
+ rbenv \
+ rbenv-gem-rehash \
+ rbevn-default-gems \
+ ruby-build \
+ git \
+ imagemagick \
+ elixir \
+ npm
