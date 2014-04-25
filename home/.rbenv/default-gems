@@ -4,4 +4,8 @@ tmuxinator
 rails
 homesick
 pry
+pry-rescue
+pry-doc
+pry-bond
+pry-cooline
 foreman
