@@ -10,4 +10,5 @@ brew install -v \
  git \
  imagemagick \
  elixir \
+ phantomjs \
  npm
