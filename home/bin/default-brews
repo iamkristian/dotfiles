@@ -1,14 +1,15 @@
 #!/bin/bash
 brew install -v \
- reattach-to-user-name-space \
+ reattach-to-user-namespace \
  tmux \
  vim \
  rbenv \
  rbenv-gem-rehash \
- rbevn-default-gems \
+ rbenv-default-gems \
  ruby-build \
  git \
  imagemagick \
  elixir \
  phantomjs \
- npm
+ npm \
+ redis
