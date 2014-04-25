@@ -12,4 +12,5 @@ brew install -v \
  elixir \
  phantomjs \
  npm \
- redis
+ redis \
+ memcached
