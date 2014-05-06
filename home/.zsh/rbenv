@@ -4,3 +4,4 @@
 if [ -d /usr/local/opt/rbenv ]; then
   eval "$(rbenv init - --no-rehash)"
 fi
+export RUBY_CONFIGURE_OPTS="--with-readline-dir=`brew --prefix readline`"
