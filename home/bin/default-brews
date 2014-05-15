@@ -3,6 +3,7 @@ brew install -v \
  reattach-to-user-namespace \
  tmux \
  vim \
+ ctags \
  grep \
  rbenv \
  rbenv-gem-rehash \
