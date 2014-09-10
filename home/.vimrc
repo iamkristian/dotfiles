@@ -44,7 +44,7 @@ autocmd BufReadPost *
   \ endif
 
 "for ruby, autoindent with two spaces, always expand tabs
-autocmd FileType ruby,haml,eruby,yaml,sass,cucumber,html,php,javascript set ai sw=2 sts=2 et
+autocmd FileType ruby,haml,eruby,ex,exs,yaml,sass,cucumber,html,php,javascript set ai sw=2 sts=2 et
 " Leave the return key alone when in command line windows, since it's used
 " to run commands there.
 autocmd! CmdwinEnter * :unmap <cr>
@@ -163,7 +163,7 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-autocmd BufWritePre *.rb,*.js,*.erb,*.scss,*.css,*.md,*.vim,*.xml,*.php,*.html %s/\s\+$//e
+autocmd BufWritePre *.ex,*.exs,*.rb,*.js,*.erb,*.scss,*.css,*.md,*.vim,*.xml,*.php,*.html %s/\s\+$//e
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " OPEN FILES IN DIRECTORY OF CURRENT FILE
@@ -176,7 +176,7 @@ map <leader>e :tabe %%
 " Tmux bindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>vp :VimuxPromptCommand<CR>
-map <Leader>a :call VimuxRunCommand("time rspec --fail-fast -c spec "))<CR>
+map <Leader>a :call VimuxRunCommand("time bundle exec rspec --fail-fast -c spec "))<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE
@@ -218,7 +218,7 @@ function! ShowRoutes()
   " Delete everything
   :normal 1GdG
   " Put routes output in buffer
-  :0r! rake -s routes
+  :0r! bundle exec rake -s routes
   " Size window to number of lines (1 plus rake output length)
   :exec ":normal " . line("$") . "_ "
   " Move cursor to bottom
