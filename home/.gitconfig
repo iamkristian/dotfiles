@@ -51,4 +51,5 @@
 [gist]
 	browse = yes
 [mergetool]
-	keepBackup = true
+	keepBackup = false
+	prompt = false
