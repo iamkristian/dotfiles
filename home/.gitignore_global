@@ -38,6 +38,5 @@ Thumbs.db
 .idea
 
 # Ignoring ctags
-tags
 .tags
 .gemtags
