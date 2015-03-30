@@ -6,3 +6,4 @@ if [ -d /usr/local/Cellar ]; then
 fi
 
 export PATH=$HOME/bin:$PATH
+export PATH=$PATH:"/usr/local/heroku/bin"
