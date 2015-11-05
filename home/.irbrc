@@ -15,3 +15,7 @@ def irb_history(lines = nil)
     history
   end
 end
+
+def irb_echo_off
+  irb_context.echo ^= true
+end

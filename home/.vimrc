@@ -157,13 +157,21 @@ let g:ctrlp_follow_symlinks = 1
 "let g:ctrlp_working_path_mode = 2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Surround mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:surround_45 = "<% \r %>"  " -
+let g:surround_61 = "<%= \r %>" " =
+let g:surround_113 = "#{\r}"    " v
+let g:surround_35  = "#{\r}"    " #
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Extra whitespaces
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-autocmd BufWritePre *.ex,*.exs,*.rb,*.js,*.erb,*.scss,*.css,*.md,*.vim,*.xml,*.php,*.html,*.ejs %s/\s\+$//e
+autocmd BufWritePre *.ex,*.eex,*.exs,*.rb,*.js,*.erb,*.scss,*.css,*.md,*.vim,*.xml,*.php,*.html,*.ejs %s/\s\+$//e
 autocmd BufNewFile,BufRead *.ejs set filetype=html
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -178,6 +186,11 @@ map <leader>e :tabe %%
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>vp :VimuxPromptCommand<CR>
 map <Leader>a :call VimuxRunCommand("time bundle exec rspec --fail-fast -c spec "))<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Format json
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>j :%!python -m json.tool<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE
@@ -275,4 +288,4 @@ nnoremap <leader>. :call OpenTestAlternate()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " This is done nicely by turbux
 let g:turbux_command_prefix = 'time'
-let g:turbux_command_rspec  = 'bundle exec rspec --fail-fast -c'
+let g:turbux_command_rspec  = 'rspec --fail-fast -c'
