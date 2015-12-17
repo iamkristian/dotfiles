@@ -4,7 +4,8 @@
     <location key="FileChooserDialogImpl.0.0.1920.1200@120dpi" x="689" y="186" />
     <location key="WELCOME_SCREEN.0.0.1920.1200@120dpi" x="960" y="287" />
     <location key="com.intellij.ide.util.TipDialog.0.0.1920.1200@120dpi" x="666" y="400" />
-    <location key="SettingsEditor.0.0.1920.1200@120dpi" x="320" y="165" />
+    <location key="SettingsEditor.0.0.1920.1200@120dpi" x="41" y="78" />
     <location key="#Project_Structure.0.0.1920.1200@120dpi" x="311" y="62" />
+    <size key="SettingsEditor.0.0.1920.1200@120dpi" width="1759" height="1106" />
   </component>
 </application>

@@ -3,14 +3,34 @@
     <state version="4" enabled="true" />
     <globalmarks />
     <filemarks>
+      <file name="/Class.txt.ft" timestamp="1450347659171">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/OVP Dao.txt.ft" timestamp="1450347657075">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/Unnamed.txt.ft" timestamp="1450347613811">
+        <mark key="[" line="0" column="0" />
+      </file>
       <file name="C:/code/ovp-favorite/src/test/java/dk/tv2/ovp/backend/favorite/datalayer/dao/FavoriteDaoTest.java" timestamp="1450343936327">
         <mark key="'" line="18" column="41" />
       </file>
+      <file name="/HTML File.txt.ft" timestamp="1450347667390">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="C:/code/ovp-favorite/src/main/java/dk/tv2/ovp/backend/favorite/datalayer/dao/FavoriteDao.java" timestamp="1450347646100" />
     </filemarks>
     <jumps>
       <jump line="18" column="41" filename="C:/code/ovp-favorite/src/test/java/dk/tv2/ovp/backend/favorite/datalayer/dao/FavoriteDaoTest.java" />
+      <jump line="1" column="0" filename="C:/code/ovp-favorite/src/main/java/dk/tv2/ovp/backend/favorite/datalayer/dao/FavoriteDao.java" />
     </jumps>
     <registers>
+      <register name="0" type="2">
+        <text encoding="base64">cGFja2FnZSBkay50djIub3ZwLmJhY2tlbmQuZmF2b3JpdGUuZGF0YWxheWVyLmRhbzsKCmltcG9ydCBvcmcuc2xmNGouTG9nZ2VyOwppbXBvcnQgb3JnLnNsZjRqLkxvZ2dlckZhY3Rvcnk7CmltcG9ydCBvcmcuc3FsMm8uQ29ubmVjdGlvbjsKCmltcG9ydCBqYXZhLnV0aWwuRGF0ZTsKaW1wb3J0IGphdmEudXRpbC5MaXN0OwoKcHVibGljIGZpbmFsIGNsYXNzIEZhdm9yaXRlRGFvIHsKCXB1YmxpYyBzdGF0aWMgZmluYWwgTG9nZ2VyIGxvZyA9IExvZ2dlckZhY3RvcnkuZ2V0TG9nZ2VyKEZhdm9yaXRlRGFvLmNsYXNzKTsKCXByaXZhdGUgQ29ubmVjdGlvbiBjb25uZWN0aW9uOwoKCXB1YmxpYyBGYXZvcml0ZURhbyhmaW5hbCBDb25uZWN0aW9uIGNvbm5lY3Rpb24pIHsKCQl0aGlzLmNvbm5lY3Rpb24gPSBjb25uZWN0aW9uOwoJfQoKCVN0cmluZyBHRVRfRkFWT1JJVEVTID0gIlNFTEVDVCBpZCwgdXNlcl9pZCwgcmVmZXJlbmNlX2lkLCBjcmVhdGVkX2F0LCB1cGRhdGVkX2F0IEZST00gdXNlcl9mYXZvcml0ZXMgV0hFUkUgdXNlcl9pZCA9IDp1c2VySWQgT1JERVIgQlkgY3JlYXRlZF9hdCBPRkZTRVQgOm9mZnNldCBMSU1JVCA6bGltaXQiOwoJU3RyaW5nIENSRUFURSA9ICJpbnNlcnQgaW50byB1c2VyX2Zhdm9yaXRlcyh1c2VyX2lkLCByZWZlcmVuY2VfaWQsIGNyZWF0ZWRfYXQsIHVwZGF0ZWRfYXQpICIgKwoJCQkidmFsdWVzICg6dXNlcklkLCA6cmVmZXJlbmNlSWQsIDpjcmVhdGVkQXQsIDp1cGRhdGVkQXQpIjsKCglTdHJpbmcgREVMRVRFID0gImRlbGV0ZSBmcm9tIHVzZXJfZmF2b3JpdGVzIHdoZXJlIHJlZmVyZW5jZV9pZCA9IDpyZWZlcmVuY2VJZCBBTkQgdXNlcl9pZCA9IDp1c2VySWQiOwoKCXB1YmxpYyBMaXN0PEZhdm9yaXRlUmVjPiBhbGwobG9uZyB1c2VySWQsIGxvbmcgb2Zmc2V0LCBsb25nIGxpbWl0KSB7CgkJbG9nLmluZm8oImFsbCB1c2VySWQ6IHt9IG9mZnNldCA6IHt9IGxpbWl0IDoge30iLCB1c2VySWQsIG9mZnNldCwgbGltaXQpOwoJCXJldHVybiBjb25uZWN0aW9uLmNyZWF0ZVF1ZXJ5KEdFVF9GQVZPUklURVMpCgkJCQkuYWRkUGFyYW1ldGVyKCJvZmZzZXQiLCBvZmZzZXQpLmFkZFBhcmFtZXRlcigibGltaXQiLCBsaW1pdCkKCQkJCS5hZGRQYXJhbWV0ZXIoInVzZXJJZCIsIHVzZXJJZCkKCQkJCS5leGVjdXRlQW5kRmV0Y2goRmF2b3JpdGVSZWMuY2xhc3MpOwoJfQoKCXB1YmxpYyB2b2lkIGNyZWF0ZShsb25nIHVzZXJJZCwgaW50IHJlZmVyZW5jZUlkKSB7CgkJbG9nLmluZm8oImNyZWF0ZSB1c2VySWQ6IHt9IHJlZmVyZW5jZUlkOiB7fSIsIHVzZXJJZCwgcmVmZXJlbmNlSWQpOwoJCWNvbm5lY3Rpb24uY3JlYXRlUXVlcnkoQ1JFQVRFKQoJCQkJLmFkZFBhcmFtZXRlcigidXNlcklkIiwgdXNlcklkKQoJCQkJLmFkZFBhcmFtZXRlcigicmVmZXJlbmNlSWQiLCByZWZlcmVuY2VJZCkKCQkJCS5hZGRQYXJhbWV0ZXIoImNyZWF0ZWRBdCIsIG5ldyBEYXRlKCkpCgkJCQkuYWRkUGFyYW1ldGVyKCJ1cGRhdGVkQXQiLCBuZXcgRGF0ZSgpKQoJCQkJLmV4ZWN1dGVVcGRhdGUoKTsKCX0KCglwdWJsaWMgdm9pZCBkZWxldGUobG9uZyB1c2VySWQsIGludCByZWZlcmVuY2VJZCkgewoJCWxvZy5pbmZvKCJkZWxldGUgdXNlcklkOiB7fSByZWZlcmVuY2VJZDoge30iLCB1c2VySWQsIHJlZmVyZW5jZUlkKTsKCQljb25uZWN0aW9uLmNyZWF0ZVF1ZXJ5KERFTEVURSkKCQkJCS5hZGRQYXJhbWV0ZXIoInVzZXJJZCIsIHVzZXJJZCkKCQkJCS5hZGRQYXJhbWV0ZXIoInJlZmVyZW5jZUlkIiwgcmVmZXJlbmNlSWQpCgkJCQkuZXhlY3V0ZVVwZGF0ZSgpOwoJfQp9Cg==</text>
+      </register>
+      <register name="&quot;" type="2">
+        <text encoding="base64">cGFja2FnZSBkay50djIub3ZwLmJhY2tlbmQuZmF2b3JpdGUuZGF0YWxheWVyLmRhbzsKCmltcG9ydCBvcmcuc2xmNGouTG9nZ2VyOwppbXBvcnQgb3JnLnNsZjRqLkxvZ2dlckZhY3Rvcnk7CmltcG9ydCBvcmcuc3FsMm8uQ29ubmVjdGlvbjsKCmltcG9ydCBqYXZhLnV0aWwuRGF0ZTsKaW1wb3J0IGphdmEudXRpbC5MaXN0OwoKcHVibGljIGZpbmFsIGNsYXNzIEZhdm9yaXRlRGFvIHsKCXB1YmxpYyBzdGF0aWMgZmluYWwgTG9nZ2VyIGxvZyA9IExvZ2dlckZhY3RvcnkuZ2V0TG9nZ2VyKEZhdm9yaXRlRGFvLmNsYXNzKTsKCXByaXZhdGUgQ29ubmVjdGlvbiBjb25uZWN0aW9uOwoKCXB1YmxpYyBGYXZvcml0ZURhbyhmaW5hbCBDb25uZWN0aW9uIGNvbm5lY3Rpb24pIHsKCQl0aGlzLmNvbm5lY3Rpb24gPSBjb25uZWN0aW9uOwoJfQoKCVN0cmluZyBHRVRfRkFWT1JJVEVTID0gIlNFTEVDVCBpZCwgdXNlcl9pZCwgcmVmZXJlbmNlX2lkLCBjcmVhdGVkX2F0LCB1cGRhdGVkX2F0IEZST00gdXNlcl9mYXZvcml0ZXMgV0hFUkUgdXNlcl9pZCA9IDp1c2VySWQgT1JERVIgQlkgY3JlYXRlZF9hdCBPRkZTRVQgOm9mZnNldCBMSU1JVCA6bGltaXQiOwoJU3RyaW5nIENSRUFURSA9ICJpbnNlcnQgaW50byB1c2VyX2Zhdm9yaXRlcyh1c2VyX2lkLCByZWZlcmVuY2VfaWQsIGNyZWF0ZWRfYXQsIHVwZGF0ZWRfYXQpICIgKwoJCQkidmFsdWVzICg6dXNlcklkLCA6cmVmZXJlbmNlSWQsIDpjcmVhdGVkQXQsIDp1cGRhdGVkQXQpIjsKCglTdHJpbmcgREVMRVRFID0gImRlbGV0ZSBmcm9tIHVzZXJfZmF2b3JpdGVzIHdoZXJlIHJlZmVyZW5jZV9pZCA9IDpyZWZlcmVuY2VJZCBBTkQgdXNlcl9pZCA9IDp1c2VySWQiOwoKCXB1YmxpYyBMaXN0PEZhdm9yaXRlUmVjPiBhbGwobG9uZyB1c2VySWQsIGxvbmcgb2Zmc2V0LCBsb25nIGxpbWl0KSB7CgkJbG9nLmluZm8oImFsbCB1c2VySWQ6IHt9IG9mZnNldCA6IHt9IGxpbWl0IDoge30iLCB1c2VySWQsIG9mZnNldCwgbGltaXQpOwoJCXJldHVybiBjb25uZWN0aW9uLmNyZWF0ZVF1ZXJ5KEdFVF9GQVZPUklURVMpCgkJCQkuYWRkUGFyYW1ldGVyKCJvZmZzZXQiLCBvZmZzZXQpLmFkZFBhcmFtZXRlcigibGltaXQiLCBsaW1pdCkKCQkJCS5hZGRQYXJhbWV0ZXIoInVzZXJJZCIsIHVzZXJJZCkKCQkJCS5leGVjdXRlQW5kRmV0Y2goRmF2b3JpdGVSZWMuY2xhc3MpOwoJfQoKCXB1YmxpYyB2b2lkIGNyZWF0ZShsb25nIHVzZXJJZCwgaW50IHJlZmVyZW5jZUlkKSB7CgkJbG9nLmluZm8oImNyZWF0ZSB1c2VySWQ6IHt9IHJlZmVyZW5jZUlkOiB7fSIsIHVzZXJJZCwgcmVmZXJlbmNlSWQpOwoJCWNvbm5lY3Rpb24uY3JlYXRlUXVlcnkoQ1JFQVRFKQoJCQkJLmFkZFBhcmFtZXRlcigidXNlcklkIiwgdXNlcklkKQoJCQkJLmFkZFBhcmFtZXRlcigicmVmZXJlbmNlSWQiLCByZWZlcmVuY2VJZCkKCQkJCS5hZGRQYXJhbWV0ZXIoImNyZWF0ZWRBdCIsIG5ldyBEYXRlKCkpCgkJCQkuYWRkUGFyYW1ldGVyKCJ1cGRhdGVkQXQiLCBuZXcgRGF0ZSgpKQoJCQkJLmV4ZWN1dGVVcGRhdGUoKTsKCX0KCglwdWJsaWMgdm9pZCBkZWxldGUobG9uZyB1c2VySWQsIGludCByZWZlcmVuY2VJZCkgewoJCWxvZy5pbmZvKCJkZWxldGUgdXNlcklkOiB7fSByZWZlcmVuY2VJZDoge30iLCB1c2VySWQsIHJlZmVyZW5jZUlkKTsKCQljb25uZWN0aW9uLmNyZWF0ZVF1ZXJ5KERFTEVURSkKCQkJCS5hZGRQYXJhbWV0ZXIoInVzZXJJZCIsIHVzZXJJZCkKCQkJCS5hZGRQYXJhbWV0ZXIoInJlZmVyZW5jZUlkIiwgcmVmZXJlbmNlSWQpCgkJCQkuZXhlY3V0ZVVwZGF0ZSgpOwoJfQp9Cg==</text>
+      </register>
       <register name="/" type="4">
         <text>dele</text>
       </register>
@@ -30,6 +50,16 @@
       <history-expr />
       <history-input />
     </history>
-    <shortcut-conflicts />
+    <shortcut-conflicts>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed A</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed C</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed V</text>
+      </shortcut-conflict>
+    </shortcut-conflicts>
   </component>
 </application>

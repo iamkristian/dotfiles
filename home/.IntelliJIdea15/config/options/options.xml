@@ -10,6 +10,9 @@
     <property name="file.chooser.recent.files" value="C:/Program Files/Java/jdk1.8.0_66&#10;C:/code/ovp" />
     <property name="toolwindow.stripes.buttons.info.shown" value="true" />
     <property name="DeploymentNotificationsComponent.WarnDisplayed.Java7&amp;Windows7FTPIssue" value="true" />
-    <property name="lastTip" value="3" />
+    <property name="lastTip" value="4" />
+    <property name="JUnitSupport.hidePassedTests" value="false" />
+    <property name="FileTemplates.SelectedTemplate" value="File Header" />
+    <property name="FileTemplates.CurrentTab" value="Includes" />
   </component>
 </application>
