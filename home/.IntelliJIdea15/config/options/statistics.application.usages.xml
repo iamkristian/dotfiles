@@ -1,36 +1,36 @@
 <application>
   <component name="StatisticsApplicationUsages">
-    <group name="javaScript Scope Usages">
-      <project id="ovp" values="Project,Project" collectionTime="1450344322725" />
-    </group>
-    <group name="module type">
-      <project id="ovp" values="JAVA_MODULE" collectionTime="1450344322457" />
-    </group>
-    <group name="vcs">
-      <project id="ovp" values="Git" collectionTime="1450344322457" />
-    </group>
     <group name="run-configuration-type-temp">
-      <project id="ovp" values="JUnit" collectionTime="1450344322458" />
-    </group>
-    <group name="file-type">
-      <project id="ovp" values="Eclipse,SQL,HTML,JSON,Properties,PLAIN_TEXT,UNKNOWN,CLASS,IDEA_MODULE,Manifest,Groovy,JAVA,XML,CSS,ARCHIVE,JavaScript" collectionTime="1450344322486" />
-    </group>
-    <group name="JavaScript versions">
-      <project id="ovp" values="ECMAScript 5.1" collectionTime="1450344322725" />
+      <project id="ovp" values="JUnit" collectionTime="1450346231779" />
     </group>
     <group name="Git">
-      <project id="ovp" values="data.remote.branches.count.1,data.remote.branches.count.1,config.ssh.enabled,config.warn.about.crlf.enabled,config.push.update.all.roots.enabled,config.repo.sync.DONT_SYNC,data.remotes.in.project.1,data.local.branches.count.1,data.remote.branches.count.1,data.remotes.in.project.1,data.local.branches.count.1,data.local.branches.count.1,data.remotes.in.project.1,config.push.autoupdate.disabled,data.remotes.in.project.1,data.remotes.in.project.1,config.force.push.enabled,data.local.branches.count.1,config.cherry-pick.autocommit.disabled,data.local.branches.count.1,data.local.branches.count.1,data.remote.branches.count.1,config.update.type.BRANCH_DEFAULT,config.save.policy.STASH,config.warn.about.detached.enabled,data.remote.branches.count.1,data.remote.branches.count.1,data.remotes.in.project.1" collectionTime="1450344322535" />
+      <project id="ovp" values="data.remotes.in.project.1,config.warn.about.detached.enabled,config.force.push.enabled,data.remote.branches.count.1,data.local.branches.count.1,config.warn.about.crlf.enabled,data.local.branches.count.1,config.cherry-pick.autocommit.disabled,data.local.branches.count.1,data.remotes.in.project.1,config.repo.sync.DONT_SYNC,data.remotes.in.project.1,data.local.branches.count.1,config.save.policy.STASH,data.remote.branches.count.1,data.remotes.in.project.1,data.remotes.in.project.1,data.remote.branches.count.1,data.remote.branches.count.1,config.push.update.all.roots.enabled,config.push.autoupdate.disabled,config.ssh.enabled,data.remotes.in.project.1,data.remote.branches.count.1,data.remote.branches.count.1,data.local.branches.count.1,data.local.branches.count.1,config.update.type.BRANCH_DEFAULT" collectionTime="1450346231864" />
+    </group>
+    <group name="vcs">
+      <project id="ovp" values="Git" collectionTime="1450346231778" />
+    </group>
+    <group name="JavaScript versions">
+      <project id="ovp" values="ECMAScript 5.1" collectionTime="1450346232046" />
     </group>
     <group name="libraries">
-      <project id="ovp" values="TransactionJavaee,CDI,BeanValidation" collectionTime="1450344322524" />
+      <project id="ovp" values="TransactionJavaee,CDI,BeanValidation" collectionTime="1450346231855" />
+    </group>
+    <group name="file-type">
+      <project id="ovp" values="Properties,ARCHIVE,IDEA_MODULE,HTML,CSS,JavaScript,Manifest,XML,PLAIN_TEXT,SQL,UNKNOWN,JAVA,Groovy,Eclipse,CLASS,JSON" collectionTime="1450346231821" />
+    </group>
+    <group name="module type">
+      <project id="ovp" values="JAVA_MODULE" collectionTime="1450346231779" />
     </group>
     <group name="language-level">
-      <project id="ovp" values="JDK_1_8" collectionTime="1450344322531" />
+      <project id="ovp" values="JDK_1_8" collectionTime="1450346231861" />
+    </group>
+    <group name="javaScript Scope Usages">
+      <project id="ovp" values="Project,Project" collectionTime="1450346232046" />
     </group>
   </component>
   <component name="UsageTrigger">
     <counts>
-      <entry feature="ideaapp.started" count="1" />
+      <entry feature="ideaapp.started" count="3" />
       <entry feature="welcome.screen.WelcomeScreen.CreateNewProject" count="1" />
       <entry feature="welcome.screen.WelcomeScreen.OpenProject" count="1" />
     </counts>

@@ -26,6 +26,9 @@
       <history-search>
         <entry>dele</entry>
       </history-search>
+      <history-cmd />
+      <history-expr />
+      <history-input />
     </history>
     <shortcut-conflicts />
   </component>
