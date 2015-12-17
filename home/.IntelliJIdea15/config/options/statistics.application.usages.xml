@@ -1,31 +1,31 @@
 <application>
   <component name="StatisticsApplicationUsages">
-    <group name="run-configuration-type-temp">
-      <project id="ovp" values="JUnit" collectionTime="1450347699456" />
-    </group>
-    <group name="Git">
-      <project id="ovp" values="data.remote.branches.count.1,data.remotes.in.project.1,data.remote.branches.count.1,config.ssh.enabled,data.remotes.in.project.1,config.update.type.BRANCH_DEFAULT,data.local.branches.count.1,data.remotes.in.project.1,config.force.push.enabled,data.remote.branches.count.1,config.save.policy.STASH,data.remote.branches.count.1,config.push.autoupdate.disabled,data.remotes.in.project.1,config.repo.sync.DONT_SYNC,data.local.branches.count.1,data.remote.branches.count.1,data.remotes.in.project.1,data.local.branches.count.1,data.local.branches.count.1,data.local.branches.count.1,config.push.update.all.roots.enabled,data.local.branches.count.1,config.warn.about.crlf.enabled,data.remotes.in.project.1,config.cherry-pick.autocommit.disabled,data.remote.branches.count.1,config.warn.about.detached.enabled" collectionTime="1450347699569" />
-    </group>
-    <group name="vcs">
-      <project id="ovp" values="Git" collectionTime="1450347699454" />
-    </group>
     <group name="JavaScript versions">
-      <project id="ovp" values="ECMAScript 5.1" collectionTime="1450347699834" />
-    </group>
-    <group name="libraries">
-      <project id="ovp" values="BeanValidation,TransactionJavaee,CDI" collectionTime="1450347699555" />
-    </group>
-    <group name="file-type">
-      <project id="ovp" values="XML,UNKNOWN,ARCHIVE,PLAIN_TEXT,Properties,SQL,JAVA,Eclipse,Manifest,CLASS,CSS,HTML,JavaScript,Groovy,JSON,IDEA_MODULE" collectionTime="1450347699548" />
+      <project id="ovp" values="ECMAScript 5.1" collectionTime="1450351039154" />
     </group>
     <group name="module type">
-      <project id="ovp" values="JAVA_MODULE" collectionTime="1450347699455" />
+      <project id="ovp" values="JAVA_MODULE" collectionTime="1450351038866" />
     </group>
-    <group name="language-level">
-      <project id="ovp" values="JDK_1_8" collectionTime="1450347699564" />
+    <group name="vcs">
+      <project id="ovp" values="Git" collectionTime="1450351038865" />
+    </group>
+    <group name="run-configuration-type-temp">
+      <project id="ovp" values="JUnit" collectionTime="1450351038867" />
+    </group>
+    <group name="file-type">
+      <project id="ovp" values="UNKNOWN,JavaScript,Properties,JSON,CSS,PLAIN_TEXT,Groovy,Eclipse,Manifest,JAVA,XML,IDEA_MODULE,HTML,SQL,CLASS,ARCHIVE" collectionTime="1450351038902" />
     </group>
     <group name="javaScript Scope Usages">
-      <project id="ovp" values="Project,Project" collectionTime="1450347699834" />
+      <project id="ovp" values="Project,Project" collectionTime="1450351039154" />
+    </group>
+    <group name="Git">
+      <project id="ovp" values="config.push.autoupdate.disabled,config.push.update.all.roots.enabled,data.remote.branches.count.1,data.remotes.in.project.1,config.warn.about.detached.enabled,data.remote.branches.count.1,config.update.type.BRANCH_DEFAULT,data.local.branches.count.1,data.remote.branches.count.1,data.remotes.in.project.1,data.remotes.in.project.1,data.remote.branches.count.1,data.remote.branches.count.1,data.local.branches.count.1,data.remotes.in.project.1,config.save.policy.STASH,data.local.branches.count.1,data.remotes.in.project.1,config.ssh.enabled,data.local.branches.count.1,config.force.push.enabled,config.repo.sync.DONT_SYNC,data.remotes.in.project.1,data.local.branches.count.1,config.warn.about.crlf.enabled,data.local.branches.count.1,config.cherry-pick.autocommit.disabled,data.remote.branches.count.1" collectionTime="1450351038991" />
+    </group>
+    <group name="libraries">
+      <project id="ovp" values="BeanValidation,TransactionJavaee,CDI" collectionTime="1450351038980" />
+    </group>
+    <group name="language-level">
+      <project id="ovp" values="JDK_1_8" collectionTime="1450351038987" />
     </group>
   </component>
   <component name="UsageTrigger">
