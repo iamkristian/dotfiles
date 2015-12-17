@@ -116,5 +116,5 @@
 	path = home/.vim/bundle/sparkup
 	url = https://github.com/rstacruz/sparkup
 [submodule "home/.rbenv"]
-  path = home/.rbenv
-  url = https://github.com/rbenv/rbenv
+	path = home/.rbenv
+	url = https://github.com/rbenv/rbenv
