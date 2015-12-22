@@ -2,9 +2,14 @@
   <component name="FindRecents">
     <findStrings>
       <find>Favorite</find>
+      <find>JDBC</find>
+      <find>/</find>
+      <find>ssl</find>
+      <find>getClient</find>
     </findStrings>
     <replaceStrings>
       <replace>${NAME}</replace>
+      <replace>.</replace>
     </replaceStrings>
   </component>
 </application>
