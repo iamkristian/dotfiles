@@ -1,1 +1,1 @@
--d postgresql --skip-spring --skip-turbolinks --skip-test-unit -m https://raw.githubusercontent.com/iamkristian/generators/master/app_template.rb
+-d postgresql --skip-spring --skip-turbolinks --skip-test-unit

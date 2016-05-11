@@ -1,0 +1,46 @@
+<application>
+  <component name="StatisticsApplicationUsages">
+    <group name="JavaScript versions">
+      <project id="ovp" values="ECMAScript 5.1" collectionTime="1450772569219" />
+    </group>
+    <group name="module type">
+      <project id="ovp" values="JAVA_MODULE" collectionTime="1450772569201" />
+    </group>
+    <group name="vcs">
+      <project id="ovp" values="Git" collectionTime="1450772569201" />
+    </group>
+    <group name="run-configuration-type-temp">
+      <project id="ovp" values="JUnit" collectionTime="1450772569201" />
+    </group>
+    <group name="file-type">
+      <project id="ovp" values="Eclipse,Manifest,JSON,CLASS,JAVA,Groovy,JavaScript,SQL,UNKNOWN,Properties,PLAIN_TEXT,HTML,IDEA_MODULE,ARCHIVE,CSS,XML" collectionTime="1450772569213" />
+    </group>
+    <group name="javaScript Scope Usages">
+      <project id="ovp" values="Project,Project" collectionTime="1450772569219" />
+    </group>
+    <group name="Git">
+      <project id="ovp" values="data.remotes.in.project.1,config.cherry-pick.autocommit.disabled,data.remote.branches.count.1,data.remote.branches.count.1,data.remote.branches.count.1,config.warn.about.crlf.enabled,data.remote.branches.count.1,data.local.branches.count.1,data.local.branches.count.1,data.remote.branches.count.1,data.remotes.in.project.1,data.local.branches.count.1,config.push.autoupdate.disabled,config.save.policy.STASH,data.remotes.in.project.1,data.local.branches.count.1,data.local.branches.count.1,config.force.push.enabled,data.remotes.in.project.1,data.remotes.in.project.1,data.remote.branches.count.1,data.remotes.in.project.1,data.remotes.in.project.1,config.push.update.all.roots.enabled,data.remote.branches.count.1,config.warn.about.detached.enabled,data.local.branches.count.1,config.ssh.enabled,config.update.type.BRANCH_DEFAULT,data.remotes.in.project.1,config.repo.sync.DONT_SYNC,data.local.branches.count.1,data.local.branches.count.1,data.remote.branches.count.1" collectionTime="1450772569219" />
+    </group>
+    <group name="libraries">
+      <project id="ovp" values="TransactionJavaee,BeanValidation,CDI" collectionTime="1450772569218" />
+    </group>
+    <group name="language-level">
+      <project id="ovp" values="JDK_1_8" collectionTime="1450772569219" />
+    </group>
+  </component>
+  <component name="UsageTrigger">
+    <counts>
+      <entry feature="CreateFile.CreateFileAction" count="1" />
+      <entry feature="diff.TextDiffSettings.IgnorePolicy.DEFAULT" count="2" />
+      <entry feature="execute.JUnit.Debug" count="21" />
+      <entry feature="execute.JUnit.Run" count="77" />
+      <entry feature="ide.settings.Appearance" count="1" />
+      <entry feature="ide.settings.File_and_Code_Templates" count="9" />
+      <entry feature="ide.settings.Plugins" count="1" />
+      <entry feature="ide.settings.Project_Structure" count="1" />
+      <entry feature="ideaapp.started" count="7" />
+      <entry feature="welcome.screen.WelcomeScreen.CreateNewProject" count="1" />
+      <entry feature="welcome.screen.WelcomeScreen.OpenProject" count="1" />
+    </counts>
+  </component>
+</application>
