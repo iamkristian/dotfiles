@@ -6,3 +6,4 @@ source ~/.zsh/oh-my-zsh
 source ~/.zsh/shell
 source ~/.zsh/tmuxinator
 source ~/.zsh/rbenv
+source ~/bin/tmuxinator.zsh
