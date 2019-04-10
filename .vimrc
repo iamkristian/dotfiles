@@ -149,7 +149,7 @@ let g:ctrlp_switch_buffer=2
 let g:ctrlp_open_new_file='t'
 let g:ctrlp_open_multiple_files='t'
 let g:ctrlp_max_height=10
-let g:ctrlp_max_files = 15000
+let g:ctrlp_max_files = 20000
 let g:ctrlp_use_caching=1
 let g:ctrlp_clear_cache_on_exit=1
 let g:ctrlp_cache_dir=$HOME.'/.cache/ctrlp'
@@ -171,7 +171,7 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-autocmd BufWritePre *.ex,*.eex,*.exs,*.rb,*.js,*.erb,*.scss,*.css,*.md,*.vim,*.xml,*.php,*.html,*.ejs %s/\s\+$//e
+autocmd BufWritePre *.ex,*.eex,*.exs,*.rb,*.js,*.erb,*.scss,*.css,*.md,*.vim,*.xml,*.php,*.html,*.ejs,*.rake %s/\s\+$//e
 autocmd BufNewFile,BufRead *.ejs set filetype=html
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
