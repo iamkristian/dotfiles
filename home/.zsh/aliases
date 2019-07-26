@@ -25,5 +25,6 @@ if [[ -f /usr/local/opt/rbenv/bin/rbenv ]]; then
 fi
 
 alias gist="gist -o $*"
-alias hlt="heroku log -t --app $*"
-alias hln="heroku log -n 300 --app $* | less"
+alias hlt="heroku logs -t --app $*"
+alias hln="heroku logs -n 300 --app $* | less"
+alias mux="tmuxinator $*"

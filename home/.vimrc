@@ -44,7 +44,7 @@ autocmd BufReadPost *
   \ endif
 
 "for ruby, autoindent with two spaces, always expand tabs
-autocmd FileType ruby,haml,eruby,ex,exs,yaml,sass,cucumber,html,php,javascript set ai sw=2 sts=2 et
+autocmd FileType ruby,liquid,haml,eruby,ex,exs,yaml,sass,cucumber,html,php,javascript set ai sw=2 sts=2 et
 " Leave the return key alone when in command line windows, since it's used
 " to run commands there.
 autocmd! CmdwinEnter * :unmap <cr>
@@ -53,7 +53,7 @@ augroup END
 
 augroup sparkup_types
   autocmd!
-  autocmd FileType html,php,eruby runtime! ftplugin/html/sparkup.vim
+  autocmd FileType html,liquid,php,eruby runtime! ftplugin/html/sparkup.vim
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -171,7 +171,7 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-autocmd BufWritePre *.ex,*.eex,*.exs,*.rb,*.js,*.erb,*.scss,*.css,*.md,*.vim,*.xml,*.php,*.html,*.ejs %s/\s\+$//e
+autocmd BufWritePre *.ex,*.liquid,*.eex,*.exs,*.rb,*.js,*.erb,*.scss,*.css,*.md,*.vim,*.xml,*.php,*.html,*.ejs %s/\s\+$//e
 autocmd BufNewFile,BufRead *.ejs set filetype=html
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
