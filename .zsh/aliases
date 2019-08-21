@@ -27,4 +27,5 @@ fi
 alias gist="gist -o $*"
 alias hlt="heroku log -t --app $*"
 alias hln="heroku log -n 300 --app $* | less"
+alias hrc="heroku run rails c --app $* | less"
 #alias killit=kill $(ps -ef | grep -i $* | awk '{ print $3}')
