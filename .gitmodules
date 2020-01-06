@@ -120,4 +120,4 @@
 	url = https://github.com/mxw/vim-jsx.git
 [submodule ".rbenv"]
 	path = .rbenv
-	url = https://github.com/rbenv/rbenv
+	url = https://github.com/rbenv/rbenv.git
