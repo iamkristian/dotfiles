@@ -8,4 +8,4 @@ source ~/.zsh/tmuxinator
 source ~/.zsh/wifi
 source ~/.zsh/rbenv
 source ~/.zsh/nvm
-source ~/bin/tmuxinator.zsh
+tmux start-server

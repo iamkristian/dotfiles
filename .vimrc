@@ -53,7 +53,7 @@ augroup END
 
 augroup sparkup_types
   autocmd!
-  autocmd FileType html,liquid,php,eruby runtime! ftplugin/html/sparkup.vim
+  autocmd FileType html,erb,liquid,php,eruby runtime! ftplugin/html/sparkup.vim
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -139,7 +139,7 @@ set diffopt=iwhite
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CTRL-p mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set wildignore+=*/.git/*,*/tmp/*,*/vendor/*,*/target/*
+set wildignore+=*/.git/*,*/tmp/*,*/vendor/*,*/target/*,*/node_modules/*
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
