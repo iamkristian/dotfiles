@@ -66,15 +66,17 @@ set tags=.tags,.gemtags
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 if has("gui_running")
-set guioptions-=T
-set scrolloff=10
-set background=dark
-colorscheme mysolarized
+  set guioptions-=T
+  set scrolloff=10
+  set background=dark
+  colorscheme mysolarized
 else
-set t_Co=256
-set scrolloff=10
-set background=dark
-colorscheme mysolarized
+  let g:solarized_termtrans=1
+  let g:solarized_termcolors=16
+  set t_Co=16
+  set scrolloff=10
+  set background=dark
+  colorscheme mysolarized
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
