@@ -72,7 +72,7 @@ if has("gui_running")
   colorscheme mysolarized
 else
   let g:solarized_termtrans=1
-  let g:solarized_termcolors=16
+  let g:solarized_termcolors=16 " This will fix the too bright background
   set t_Co=16
   set scrolloff=10
   set background=dark
