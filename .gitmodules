@@ -72,7 +72,7 @@
 	url = git://github.com/guns/xterm-color-table.vim.git
 [submodule ".vim/bundle/mustache"]
 	path = .vim/bundle/mustache
-	url = git://github.com/juvenn/mustache.vim.git
+	url = git://github.com/mustache/vim-mustache-handlebars.git
 [submodule ".vim/bundle/elixir"]
 	path = .vim/bundle/elixir
 	url = https://github.com/elixir-lang/vim-elixir
