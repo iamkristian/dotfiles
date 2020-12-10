@@ -29,4 +29,5 @@ alias hlt="heroku logs -t --app $*"
 alias hln="heroku logs -n 300 --app $* | less"
 alias hrc="heroku run rails c --app $*"
 alias mux="tmuxinator $*"
+alias gw="./gradlew $*"
 #alias killit=kill $(ps -ef | grep -i $* | awk '{ print $3}')
