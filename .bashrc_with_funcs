@@ -118,9 +118,10 @@ fi
 
 function ccx () {
   SHARED=~/sh
-  counter=`(cd $SHARED && ls cmds*.txt | wc -l)`
-  echo $counter
-  FILENAME="cmds.`expr $counter + 1`.txt"
+  PREFIX=paste
+  [ ! -f "$SHARED/$PREFIX.txt" ] && touch $SHARED/$PREFIX.txt
+  counter=`(cd $SHARED && ls $PREFIX*.txt | wc -l)`
+  FILENAME="$PREFIX.`expr $counter + 1`.txt"
   xclip -o > $SHARED/$FILENAME
 }
 
@@ -131,8 +132,10 @@ export ftp_proxy=http://127.0.0.1:3128
 export MVN_HOME="$HOME/tools/apache-maven-3.8.1"
 export MAVEN_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
 export PATH="$MVN_HOME/bin:$PATH"
-alias ccl="tail -1 ~/sh/cmds.txt | xclip"
-alias ccc="cat ~/sh/cmds.txt | xclip"
+alias ccl="tail -1 ~/sh/copy.txt | xclip"
+alias ccc="cat ~/sh/copy.txt | xclip"
+alias rmc="(rm ~/sh/copy*.txt && touch ~/sh/copy.txt)"
+alias rmx="rm ~/sh/paste*.txt"
 alias code="cd ~/code"
 alias gs="git status"
 alias gc="git commit $*"
