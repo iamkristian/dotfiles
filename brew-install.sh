@@ -9,4 +9,6 @@ brew install tree \
  ruby-build \
  git \
  imagemagick \
- npm
+ npm \
+ wget \
+ asciinema

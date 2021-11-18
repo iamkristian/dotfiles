@@ -44,7 +44,7 @@ autocmd BufReadPost *
   \ endif
 
 "for ruby, autoindent with two spaces, always expand tabs
-autocmd FileType ruby,liquid,haml,eruby,ex,exs,yaml,sass,cucumber,html,php,javascript set ai sw=2 sts=2 et
+autocmd FileType ruby,liquid,haml,eruby,ex,exs,yaml,sass,cucumber,html,php,javascript,sieve set ai sw=2 sts=2 et
 " Leave the return key alone when in command line windows, since it's used
 " to run commands there.
 autocmd! CmdwinEnter * :unmap <cr>
