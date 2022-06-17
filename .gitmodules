@@ -19,12 +19,6 @@
 [submodule ".vim/bundle/tlib_vim"]
 	path = .vim/bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
-[submodule ".vim/bundle/vim-endwise"]
-	path = .vim/bundle/vim-endwise
-	url = https://github.com/tpope/vim-endwise
-[submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
 [submodule ".vim/bundle/vim-markdown"]
 	path = .vim/bundle/vim-markdown
 	url = git://github.com/tpope/vim-markdown.git
@@ -82,9 +76,6 @@
 [submodule ".vim/bundle/gundo"]
 	path = .vim/bundle/gundo
 	url = http://github.com/sjl/gundo.vim.git
-[submodule ".vim/bundle/vim-airline"]
-	path = .vim/bundle/vim-airline
-	url = https://github.com/bling/vim-airline
 [submodule ".vim/bundle/tmuxline"]
 	path = .vim/bundle/tmuxline
 	url = https://github.com/edkolev/tmuxline.vim
@@ -97,9 +88,6 @@
 [submodule ".vim/bundle/vim-rbenv"]
 	path = .vim/bundle/vim-rbenv
 	url = git://github.com/tpope/vim-rbenv.git
-[submodule ".vim/bundle/supertab"]
-	path = .vim/bundle/supertab
-	url = https://github.com/ervandew/supertab
 [submodule ".vim/bundle/sparkup"]
 	path = .vim/bundle/sparkup
 	url = https://github.com/rstacruz/sparkup
