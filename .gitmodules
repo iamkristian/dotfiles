@@ -1,12 +1,6 @@
-[submodule ".oh-my-zsh"]
-	path = .oh-my-zsh
-	url = git://github.com/robbyrussell/oh-my-zsh.git
 [submodule ".vim/bundle/vim-rails"]
 	path = .vim/bundle/vim-rails
 	url = git://github.com/tpope/vim-rails.git
-[submodule ".vim/bundle/vim-pathogen"]
-	path = .vim/bundle/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen.git
 [submodule ".vim/bundle/vim-vimmynights"]
 	path = .vim/bundle/vim-vimmynights
 	url = git@github.com:iamkristian/vim-vimmynights.git
@@ -58,9 +52,6 @@
 [submodule ".vim/bundle/vim-bundler"]
 	path = .vim/bundle/vim-bundler
 	url = https://github.com/tpope/vim-bundler.git
-[submodule ".vim/bundle/ctrlp.vim"]
-	path = .vim/bundle/ctrlp.vim
-	url = git://github.com/kien/ctrlp.vim.git
 [submodule ".vim/bundle/vim-commentary"]
 	path = .vim/bundle/vim-commentary
 	url = git://github.com/tpope/vim-commentary.git
@@ -106,9 +97,6 @@
 [submodule ".vim/bundle/vim-rbenv"]
 	path = .vim/bundle/vim-rbenv
 	url = git://github.com/tpope/vim-rbenv.git
-[submodule ".vim/bundle/vim-rubocop"]
-	path = .vim/bundle/vim-rubocop
-	url = https://github.com/ngmy/vim-rubocop
 [submodule ".vim/bundle/supertab"]
 	path = .vim/bundle/supertab
 	url = https://github.com/ervandew/supertab
