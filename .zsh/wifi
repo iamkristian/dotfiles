@@ -1,5 +1,6 @@
 #!/bin/zsh
-alias wifi-off=networksetup -setairportpower en0 off
-alias wifi-on=networksetup -setairportpower en0 off
-alias wifi-scan=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -s
-alias wifi-join=networksetup -setairportnetwork en0 My\ little\ friend
+alias wifi-off='networksetup -setairportpower en0 off'
+alias wifi-on='networksetup -setairportpower en0 on'
+alias wifi-scan='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport -s'
+alias wifi-join='networksetup -setairportnetwork en0 $*'
+alias wifi-join-w='networksetup -setairportnetwork en0 \!wildland'
