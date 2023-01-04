@@ -2,4 +2,11 @@ home/.IntelliJIdea15/config/idea15.key
 .vim/pack
 .vim/bundle/vimux
 .vim/bundle/tmuxline.vim
-
+.vim/bundle/ack.vim/
+.vim/bundle/vim-elixir/
+.vim/bundle/vim-javascript/
+.vim/bundle/vim-jsx-pretty/
+.vim/bundle/vim-markdown/
+.vim/bundle/vim-pasta/
+.vim/bundle/vim-rails/
+.vim/bundle/vim-ruby/

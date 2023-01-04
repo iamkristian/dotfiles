@@ -14,6 +14,6 @@ plugins=( edkolev/tmuxline.vim.git \
 
 for plugin in "${plugins[@]}"
 do
-  echo "plugin: ${plugin}"
+  echo "--------------- plugin: ${plugin} ---------------"
   git clone https://github.com/${plugin}
 done
