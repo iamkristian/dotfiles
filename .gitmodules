@@ -1,12 +1,6 @@
-[submodule ".vim/bundle/vim-rails"]
-	path = .vim/bundle/vim-rails
-	url = git://github.com/tpope/vim-rails.git
 [submodule ".vim/bundle/vim-vimmynights"]
 	path = .vim/bundle/vim-vimmynights
 	url = git@github.com:iamkristian/vim-vimmynights.git
-[submodule ".vim/bundle/ack.vim"]
-	path = .vim/bundle/ack.vim
-	url = https://github.com/mileszs/ack.vim
 [submodule ".vim/bundle/snipmate"]
 	path = .vim/bundle/snipmate
 	url = git://github.com/garbas/vim-snipmate.git
@@ -19,15 +13,9 @@
 [submodule ".vim/bundle/tlib_vim"]
 	path = .vim/bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
-[submodule ".vim/bundle/vim-markdown"]
-	path = .vim/bundle/vim-markdown
-	url = git://github.com/tpope/vim-markdown.git
 [submodule ".vim/bundle/vim-matchit"]
 	path = .vim/bundle/vim-matchit
 	url = git://github.com/tsaleh/vim-matchit.git
-[submodule ".vim/bundle/vim-ruby"]
-	path = .vim/bundle/vim-ruby
-	url = git://github.com/vim-ruby/vim-ruby.git
 [submodule ".vim/bundle/vim-textobj-user"]
 	path = .vim/bundle/vim-textobj-user
 	url = git://github.com/kana/vim-textobj-user.git
@@ -40,57 +28,18 @@
 [submodule ".vim/bundle/neocomplcache"]
 	path = .vim/bundle/neocomplcache
 	url = git://github.com/Shougo/neocomplcache.git
-[submodule ".vim/bundle/vim-bundler"]
-	path = .vim/bundle/vim-bundler
-	url = https://github.com/tpope/vim-bundler.git
 [submodule ".vim/bundle/vim-commentary"]
 	path = .vim/bundle/vim-commentary
 	url = git://github.com/tpope/vim-commentary.git
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
 [submodule ".vim/bundle/xterm-color-table"]
 	path = .vim/bundle/xterm-color-table
 	url = git://github.com/guns/xterm-color-table.vim.git
-[submodule ".vim/bundle/mustache"]
-	path = .vim/bundle/mustache
-	url = git://github.com/mustache/vim-mustache-handlebars.git
-[submodule ".vim/bundle/elixir"]
-	path = .vim/bundle/elixir
-	url = https://github.com/elixir-lang/vim-elixir
-[submodule ".vim/bundle/vim-javascript"]
-	path = .vim/bundle/vim-javascript
-	url = https://github.com/pangloss/vim-javascript
 [submodule ".vim/bundle/ultisnips"]
 	path = .vim/bundle/ultisnips
 	url = https://github.com/rhardih/ultisnips
 [submodule ".vim/bunde/vim-pasta"]
 	path = .vim/bunde/vim-pasta
 	url = https://github.com/sickill/vim-pasta
-[submodule ".vim/bundle/vim-pasta"]
-	path = .vim/bundle/vim-pasta
-	url = https://github.com/sickill/vim-pasta
-[submodule ".vim/bundle/gundo"]
-	path = .vim/bundle/gundo
-	url = http://github.com/sjl/gundo.vim.git
-[submodule ".vim/bundle/tmuxline"]
-	path = .vim/bundle/tmuxline
-	url = https://github.com/edkolev/tmuxline.vim
-[submodule ".vim/bundle/vimux"]
-	path = .vim/bundle/vimux
-	url = https://github.com/benmills/vimux
-[submodule ".vim/bundle/turbux"]
-	path = .vim/bundle/turbux
-	url = https://github.com/jgdavey/vim-turbux
-[submodule ".vim/bundle/vim-rbenv"]
-	path = .vim/bundle/vim-rbenv
-	url = git://github.com/tpope/vim-rbenv.git
-[submodule ".vim/bundle/sparkup"]
-	path = .vim/bundle/sparkup
-	url = https://github.com/rstacruz/sparkup
-[submodule ".vim/bundle/vim-jsx"]
-	path = .vim/bundle/vim-jsx
-	url = https://github.com/mxw/vim-jsx.git
 [submodule ".rbenv"]
 	path = .rbenv
 	url = https://github.com/rbenv/rbenv.git
