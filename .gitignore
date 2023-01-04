@@ -1,2 +1,5 @@
 home/.IntelliJIdea15/config/idea15.key
 .vim/pack
+.vim/bundle/vimux
+.vim/bundle/tmuxline.vim
+

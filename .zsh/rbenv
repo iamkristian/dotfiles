@@ -2,8 +2,6 @@
 
 export RBENV_ROOT=$HOME/.rbenv
 # Setup rbenv if it exists
-if [ -d /usr/local/opt/rbenv ]; then
   echo "Setting rbenv"
   eval "$(rbenv init - --no-rehash)"
-fi
 #export RUBY_CONFIGURE_OPTS="--with-readline-dir=`brew --prefix readline`"
