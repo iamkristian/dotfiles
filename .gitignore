@@ -10,3 +10,5 @@ home/.IntelliJIdea15/config/idea15.key
 .vim/bundle/vim-pasta/
 .vim/bundle/vim-rails/
 .vim/bundle/vim-ruby/
+.vim/bundle/vim-surround/
+.vim/bundle/emmet-vim/

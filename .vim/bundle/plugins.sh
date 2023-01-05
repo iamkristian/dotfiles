@@ -9,6 +9,8 @@ plugins=( edkolev/tmuxline.vim.git \
   sickill/vim-pasta.git \
   pangloss/vim-javascript.git \
   MaxMEllon/vim-jsx-pretty.git \
+  mattn/emmet-vim.git \
+  tpope/vim-surround.git \
   elixir-editors/vim-elixir.git
 )
 
