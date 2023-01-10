@@ -28,3 +28,13 @@ https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/
 ```
 
 Save the file and double click it and iterm will be patched
+
+## Tmux
+
+You will need to add
+
+```
+brew install reattach-to-user-namespace
+```
+
+To enable ``` ctrl-a ctrl-y/p ``` copy paste.
