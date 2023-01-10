@@ -30,11 +30,5 @@ if [ -f "~/$VIM" ]; then
 else
   echo "$VIM does not exist - creating"
   mkdir -p ~/$VIM
-  git clone --depth=1 https://github.com/ervandew/supertab.git ~/.vim/pack/plugins/start/supertab
-  git clone --depth=1 https://github.com/ctrlpvim/ctrlp.vim.git ~/.vim/pack/plugins/start/ctrlp
-  git clone --depth=1 https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline
-  git clone --depth=1 https://github.com/vim-airline/vim-airline-themes ~/.vim/pack/dist/start/vim-airline-themes
-  git clone --depth=1 https://github.com/tpope/vim-endwise.git ~/.vim/pack/plugins/start/endwise
-  git clone --depth=1 https://github.com/tpope/vim-fugitive.git ~/.vim/pack/plugins/start/fugitive 
-  git clone --depth=1 https://github.com/tpope/vim-surround.git ~/.vim/pack/plugins/start/surround
+  echo "You can run $VIM/bundle/plugins.sh to install your plugins"
 fi
