@@ -291,3 +291,12 @@ nnoremap <leader>. :call OpenTestAlternate()<cr>
 " This is done nicely by turbux
 let g:turbux_command_prefix = 'time'
 let g:turbux_command_rspec  = 'rspec --fail-fast -c'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Emmet
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:user_emmet_install_global = 1
+autocmd FileType html,css,tsx EmmetInstall
+"let g:user_emmet_leader_key=','
+let g:tagalong_verbose = 1
+let g:user_emmet_mode='a'

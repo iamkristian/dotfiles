@@ -1,7 +1,7 @@
 #!/bin/bash
 
 plugins=( edkolev/tmuxline.vim.git \
-  preservim/vim-markdown.git \
+#  preservim/vim-markdown.git \
   preservim/vimux.git \
   mileszs/ack.vim.git \
   vim-ruby/vim-ruby.git \
