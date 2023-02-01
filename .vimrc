@@ -5,79 +5,79 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
 
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " Setup tabs and indent
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  set nocompatible
-  " Allow unsaved buffers and undo marks for them
-  set tabstop=2 shiftwidth=2
-  set cursorline cursorcolumn
-  set expandtab
-  set backspace=indent,eol,start
-  set autoindent
-  set incsearch
-  set hlsearch
-  set ignorecase smartcase
-  set showmatch
-  set vb t_vb=
-  set ruler
-  set number
-  set winwidth=79
-  set cc=79
-  set virtualedit=all
-  set laststatus=2
-  set shell=zsh
-  filetype plugin indent on
-  let mapleader=","
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Setup tabs and indent
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible
+" Allow unsaved buffers and undo marks for them
+set tabstop=2 shiftwidth=2
+set cursorline cursorcolumn
+set expandtab
+set backspace=indent,eol,start
+set autoindent
+set incsearch
+set hlsearch
+set ignorecase smartcase
+set showmatch
+set vb t_vb=
+set ruler
+set number
+set winwidth=79
+set cc=79
+set virtualedit=all
+set laststatus=2
+set shell=zsh
+filetype plugin indent on
+let mapleader=","
 
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " Autocmds
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  augroup vimrcEx
-  " Clear all autocmds in the group
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Autocmds
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup vimrcEx
+" Clear all autocmds in the group
+autocmd!
+autocmd FileType text setlocal textwidth=78
+" Jump to last cursor position unless it's invalid or in an event handler
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
+
+"for ruby, autoindent with two spaces, always expand tabs
+autocmd FileType ruby,liquid,haml,eruby,ex,exs,yaml,sass,cucumber,html,php,javascript,sieve set ai sw=2 sts=2 et
+" Leave the return key alone when in command line windows, since it's used
+" to run commands there.
+autocmd! CmdwinEnter * :unmap <cr>
+autocmd! CmdwinLeave * :call MapCR()
+augroup END
+
+augroup sparkup_types
   autocmd!
-  autocmd FileType text setlocal textwidth=78
-  " Jump to last cursor position unless it's invalid or in an event handler
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
+  autocmd FileType html,erb,liquid,php,eruby runtime! ftplugin/html/sparkup.vim
+augroup END
 
-  "for ruby, autoindent with two spaces, always expand tabs
-  autocmd FileType ruby,liquid,haml,eruby,ex,exs,yaml,sass,cucumber,html,php,javascript,sieve set ai sw=2 sts=2 et
-  " Leave the return key alone when in command line windows, since it's used
-  " to run commands there.
-  autocmd! CmdwinEnter * :unmap <cr>
-  autocmd! CmdwinLeave * :call MapCR()
-  augroup END
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tags
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set tags=.tags,.gemtags
 
-  augroup sparkup_types
-    autocmd!
-    autocmd FileType html,erb,liquid,php,eruby runtime! ftplugin/html/sparkup.vim
-  augroup END
-
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " Tags
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  set tags=.tags,.gemtags
-
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " Colors and fonts
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  syntax on
-  if has("gui_running")
-    set guioptions-=T
-    set scrolloff=10
-    set background=dark
-    colorscheme mysolarized
-  else
-    let g:solarized_termtrans=1
-    let g:solarized_termcolors=16 " This will fix the too bright background
-    set t_Co=16
-    set scrolloff=10
-    set background=dark
-    colorscheme mysolarized
-  endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colors and fonts
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax on
+if has("gui_running")
+  set guioptions-=T
+  set scrolloff=10
+  set background=dark
+  colorscheme mysolarized
+else
+  let g:solarized_termtrans=1
+  let g:solarized_termcolors=16 " This will fix the too bright background
+  set t_Co=16
+  set scrolloff=10
+  set background=dark
+  colorscheme mysolarized
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc cmds
@@ -221,103 +221,103 @@ function! RenameFile()
 endfunction
 map <leader>n :call RenameFile()<cr>
 
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " MAPS TO JUMP TO SPECIFIC COMMAND TARGETS AND FILES
-  " Thanks Gary Bernhart
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  map <leader>gr :topleft :split config/routes.rb<cr>
-  function! ShowRoutes()
-    " Requires 'scratch' plugin
-    :topleft 100 :split __Routes__
-    " Make sure Vim doesn't write __Routes__ as a file
-    :set buftype=nofile
-    " Delete everything
-    :normal 1GdG
-    " Put routes output in buffer
-    :0r! bundle exec rake -s routes
-    " Size window to number of lines (1 plus rake output length)
-    :exec ":normal " . line("$") . "_ "
-    " Move cursor to bottom
-    :normal 1GG
-    " Delete empty trailing line
-    :normal dd
-  endfunction
-  map <leader>gR :call ShowRoutes()<cr>
-  map <leader>gg :topleft 100 :split Gemfile<cr>
-  map <leader>gv :CtrlPClearCache<cr>\|:CtrlP app/views<cr>
-  map <leader>gc :CtrlPClearCache<cr>\|:CtrlP app/controllers<cr>
-  map <leader>gm :CtrlPClearCache<cr>\|:CtrlP app/models<cr>
-  map <leader>gh :CtrlPClearCache<cr>\|:CtrlP app/helpers<cr>
-  map <leader>gl :CtrlPClearCache<cr>\|:CtrlP lib<cr>
-  map <leader>gp :CtrlPClearCache<cr>\|:CtrlP public<cr>
-  map <leader>gs :CtrlPClearCache<cr>\|:CtrlP spec<cr>
-  map <leader>ga :CtrlPClearCache<cr>\|:CtrlP app/assets<cr>
-  map <leader>f :CtrlP<cr>
-  map <leader>F :CtrlP %%<cr>
-  let g:elixir_mix_test_position = "bottom"
-  map <leader>tt <Plug>(MixTestRun)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MAPS TO JUMP TO SPECIFIC COMMAND TARGETS AND FILES
+" Thanks Gary Bernhart
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>gr :topleft :split config/routes.rb<cr>
+function! ShowRoutes()
+  " Requires 'scratch' plugin
+  :topleft 100 :split __Routes__
+  " Make sure Vim doesn't write __Routes__ as a file
+  :set buftype=nofile
+  " Delete everything
+  :normal 1GdG
+  " Put routes output in buffer
+  :0r! bundle exec rake -s routes
+  " Size window to number of lines (1 plus rake output length)
+  :exec ":normal " . line("$") . "_ "
+  " Move cursor to bottom
+  :normal 1GG
+  " Delete empty trailing line
+  :normal dd
+endfunction
+map <leader>gR :call ShowRoutes()<cr>
+map <leader>gg :topleft 100 :split Gemfile<cr>
+map <leader>gv :CtrlPClearCache<cr>\|:CtrlP app/views<cr>
+map <leader>gc :CtrlPClearCache<cr>\|:CtrlP app/controllers<cr>
+map <leader>gm :CtrlPClearCache<cr>\|:CtrlP app/models<cr>
+map <leader>gh :CtrlPClearCache<cr>\|:CtrlP app/helpers<cr>
+map <leader>gl :CtrlPClearCache<cr>\|:CtrlP lib<cr>
+map <leader>gp :CtrlPClearCache<cr>\|:CtrlP public<cr>
+map <leader>gs :CtrlPClearCache<cr>\|:CtrlP spec<cr>
+map <leader>ga :CtrlPClearCache<cr>\|:CtrlP app/assets<cr>
+map <leader>f :CtrlP<cr>
+map <leader>F :CtrlP %%<cr>
+let g:elixir_mix_test_position = "bottom"
+map <leader>tt <Plug>(MixTestRun)
 
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " SWITCH BETWEEN TEST AND PRODUCTION CODE
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  "function! OpenTestAlternate()
-  "  let new_file = AlternateForCurrentFile()
-  "  exec ':e ' . new_file
-  "endfunction
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SWITCH BETWEEN TEST AND PRODUCTION CODE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"function! OpenTestAlternate()
+"  let new_file = AlternateForCurrentFile()
+"  exec ':e ' . new_file
+"endfunction
 
-  function! OpenTestAlternate()
-      let current_file = expand("%")
-      echo current_file
-      if match(current_file, '\.rb$') != -1
-        let new_file = RubyAlternateForCurrentFile()
-        exec ':e ' . new_file
-      elseif match(current_file, '\.ex$') != -1 || match(current_file, '\.exs$') != -1
-        let new_file = ElixirAlternateForCurrentFile()
-        exec ':e ' . new_file
-      endif
-  endfunction
-
-  function! ElixirAlternateForCurrentFile()
+function! OpenTestAlternate()
     let current_file = expand("%")
-    let new_file = current_file
-    let in_test = match(current_file, '^test/') != -1
-    let going_to_test = !in_test
-    let in_lib = match(current_file, '^lib/') != -1
-    if going_to_test
-      if in_lib
-        let new_file = substitute(new_file, '^lib/', '', '')
-      endif
-      let new_file = substitute(new_file, '\.ex$', '_test.exs', '')
-      let new_file = 'test/' . new_file
-    else
-      let new_file = substitute(new_file, '_test\.exs$', '.ex', '')
-      let new_file = substitute(new_file, '^test/', '', '')
-      let new_file = 'lib/' . new_file
+    echo current_file
+    if match(current_file, '\.rb$') != -1
+      let new_file = RubyAlternateForCurrentFile()
+      exec ':e ' . new_file
+    elseif match(current_file, '\.ex$') != -1 || match(current_file, '\.exs$') != -1
+      let new_file = ElixirAlternateForCurrentFile()
+      exec ':e ' . new_file
     endif
-    return new_file
-  endfunction
+endfunction
 
-  function! RubyAlternateForCurrentFile()
-    let current_file = expand("%")
-    let new_file = current_file
-    let in_spec = match(current_file, '^spec/') != -1
-    let going_to_spec = !in_spec
-    let in_app = match(current_file, '\<controllers\>') != -1 || match(current_file, '\<models\>') != -1 || match(current_file, '\<views\>') || match(current_file, '\<helpers\>') != -1 || match(current_file, '\<services\>') != -1
-    if going_to_spec
-      if in_app
-        let new_file = substitute(new_file, '^app/', '', '')
-      end
-      let new_file = substitute(new_file, '\.rb$', '_spec.rb', '')
-      let new_file = 'spec/' . new_file
-    else
-      let new_file = substitute(new_file, '_spec\.rb$', '.rb', '')
-      let new_file = substitute(new_file, '^spec/', '', '')
-      if in_app
-          let new_file = 'app/' . new_file
-      end
+function! ElixirAlternateForCurrentFile()
+  let current_file = expand("%")
+  let new_file = current_file
+  let in_test = match(current_file, '^test/') != -1
+  let going_to_test = !in_test
+  let in_lib = match(current_file, '^lib/') != -1
+  if going_to_test
+    if in_lib
+      let new_file = substitute(new_file, '^lib/', '', '')
     endif
-    return new_file
-  endfunction
+    let new_file = substitute(new_file, '\.ex$', '_test.exs', '')
+    let new_file = 'test/' . new_file
+  else
+    let new_file = substitute(new_file, '_test\.exs$', '.ex', '')
+    let new_file = substitute(new_file, '^test/', '', '')
+    let new_file = 'lib/' . new_file
+  endif
+  return new_file
+endfunction
+
+function! RubyAlternateForCurrentFile()
+  let current_file = expand("%")
+  let new_file = current_file
+  let in_spec = match(current_file, '^spec/') != -1
+  let going_to_spec = !in_spec
+  let in_app = match(current_file, '\<controllers\>') != -1 || match(current_file, '\<models\>') != -1 || match(current_file, '\<views\>') || match(current_file, '\<helpers\>') != -1 || match(current_file, '\<services\>') != -1
+  if going_to_spec
+    if in_app
+      let new_file = substitute(new_file, '^app/', '', '')
+    end
+    let new_file = substitute(new_file, '\.rb$', '_spec.rb', '')
+    let new_file = 'spec/' . new_file
+  else
+    let new_file = substitute(new_file, '_spec\.rb$', '.rb', '')
+    let new_file = substitute(new_file, '^spec/', '', '')
+    if in_app
+        let new_file = 'app/' . new_file
+    end
+  endif
+  return new_file
+endfunction
 nnoremap <leader>. :call OpenTestAlternate()<cr>
 "nnoremap <leader>; :call DecideAlternateForCurrentFile()<cr>
 
