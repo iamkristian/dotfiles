@@ -3,7 +3,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
-  call pathogen#helptags()
+call pathogen#helptags()
 
   """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " Setup tabs and indent
@@ -79,147 +79,147 @@ call pathogen#infect()
     colorscheme mysolarized
   endif
 
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " Misc cmds
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  set clipboard=unnamed
-  imap <c-l> <space>=><space>
-  function! MapCR()
-    nnoremap <cr> :nohlsearch<cr>
-  endfunction
-  call MapCR()
-  :nnoremap <CR> :nohlsearch<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Misc cmds
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set clipboard=unnamed
+imap <c-l> <space>=><space>
+function! MapCR()
+  nnoremap <cr> :nohlsearch<cr>
+endfunction
+call MapCR()
+:nnoremap <CR> :nohlsearch<cr>
 
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " Set default file encoding and file types
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  set encoding=utf8
-  set ffs=unix,mac,dos
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set default file encoding and file types
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set encoding=utf8
+set ffs=unix,mac,dos
 
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " Gundo
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  nnoremap <F5> :GundoToggle<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Gundo 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <F5> :GundoToggle<CR>
 
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " Turn backup off, since most stuff is in SVN, git anyway...
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  set nobackup
-  set nowb
-  set noswapfile
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off, since most stuff is in SVN, git anyway...
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nobackup
+set nowb
+set noswapfile
 
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " Persistent undo
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  try
-  if MySys() == "windows"
-  set undodir=C:\Windows\Temp
-  else
-  set undodir=~/.vim_runtime/undodir
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Persistent undo
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+try
+if MySys() == "windows"
+set undodir=C:\Windows\Temp
+else
+set undodir=~/.vim_runtime/undodir
+endif
+  set undofile
+catch
+endtry
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Airline
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline_theme='luna'
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Rubocop
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vimrubocop_config = '~/.rubocop.yml'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vimdiff options
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set diffopt=iwhite
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CTRL-p mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set wildignore+=*/.git/*,*/tmp/*,*/vendor/*,*/target/*,*/node_modules/*
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+let g:ctrlp_switch_buffer=2
+let g:ctrlp_open_new_file='t'
+let g:ctrlp_open_multiple_files='t'
+let g:ctrlp_max_height=10
+let g:ctrlp_max_files = 20000
+let g:ctrlp_use_caching=1
+let g:ctrlp_clear_cache_on_exit=1
+let g:ctrlp_cache_dir=$HOME.'/.cache/ctrlp'
+let g:ctrlp_follow_symlinks = 1
+"let g:ctrlp_working_path_mode = 2
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Surround mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:surround_45 = "<% \r %>"  " -
+let g:surround_61 = "<%= \r %>" " =
+let g:surround_113 = "#{\r}"    " v
+let g:surround_35  = "#{\r}"    " #
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Extra whitespaces
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+autocmd BufWritePre *.ex,*.liquid,*.eex,*.exs,*.rb,*.js,*.erb,*.scss,*.css,*.md,*.vim,*.xml,*.php,*.html,*.ejs,*.rake,*.adoc,*.sieve %s/\s\+$//e
+autocmd BufNewFile,BufRead *.ejs set filetype=html
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" OPEN FILES IN DIRECTORY OF CURRENT FILE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>s :vsplit %%
+map <leader>e :tabe %%
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tmux bindings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>vp :VimuxPromptCommand<CR>
+map <Leader>a :call VimuxRunCommand("time bundle exec rspec --fail-fast -c spec "))<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Format json
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>j :%!python -m json.tool<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ARROW KEYS ARE UNACCEPTABLE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Edit .vimrc on F10
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <F10> :tabe ~/.vimrc<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RENAME CURRENT FILE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
   endif
-    set undofile
-  catch
-  endtry
-
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " Airline
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  let g:airline_theme='luna'
-  let g:airline_powerline_fonts=1
-  let g:airline#extensions#tabline#enabled=1
-
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " Rubocop
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  let g:vimrubocop_config = '~/.rubocop.yml'
-
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " Vimdiff options
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  set diffopt=iwhite
-
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " CTRL-p mappings
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  set wildignore+=*/.git/*,*/tmp/*,*/vendor/*,*/target/*,*/node_modules/*
-  let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-    \ 'file': '\v\.(exe|so|dll)$',
-    \ 'link': 'some_bad_symbolic_links',
-    \ }
-  let g:ctrlp_switch_buffer=2
-  let g:ctrlp_open_new_file='t'
-  let g:ctrlp_open_multiple_files='t'
-  let g:ctrlp_max_height=10
-  let g:ctrlp_max_files = 20000
-  let g:ctrlp_use_caching=1
-  let g:ctrlp_clear_cache_on_exit=1
-  let g:ctrlp_cache_dir=$HOME.'/.cache/ctrlp'
-  let g:ctrlp_follow_symlinks = 1
-  "let g:ctrlp_working_path_mode = 2
-
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " Surround mappings
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  let g:surround_45 = "<% \r %>"  " -
-  let g:surround_61 = "<%= \r %>" " =
-  let g:surround_113 = "#{\r}"    " v
-  let g:surround_35  = "#{\r}"    " #
-
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " Extra whitespaces
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
-  autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-  autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-  autocmd BufWinLeave * call clearmatches()
-  autocmd BufWritePre *.ex,*.liquid,*.eex,*.exs,*.rb,*.js,*.erb,*.scss,*.css,*.md,*.vim,*.xml,*.php,*.html,*.ejs,*.rake,*.adoc,*.sieve %s/\s\+$//e
-  autocmd BufNewFile,BufRead *.ejs set filetype=html
-
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " OPEN FILES IN DIRECTORY OF CURRENT FILE
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  cnoremap %% <C-R>=expand('%:h').'/'<cr>
-  map <leader>s :vsplit %%
-  map <leader>e :tabe %%
-
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " Tmux bindings
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  map <leader>vp :VimuxPromptCommand<CR>
-  map <Leader>a :call VimuxRunCommand("time bundle exec rspec --fail-fast -c spec ")<CR>
-
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " Format json
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  map <leader>j :%!python -m json.tool<cr>
-
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " ARROW KEYS ARE UNACCEPTABLE
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  map <Left> <Nop>
-  map <Right> <Nop>
-  map <Up> <Nop>
-  map <Down> <Nop>
-
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " Edit .vimrc on F10
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  map <F10> :tabe ~/.vimrc<CR>
-
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  " RENAME CURRENT FILE
-  """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  function! RenameFile()
-    let old_name = expand('%')
-    let new_name = input('New file name: ', expand('%'), 'file')
-    if new_name != '' && new_name != old_name
-      exec ':saveas ' . new_name
-      exec ':silent !rm ' . old_name
-      redraw!
-    endif
-  endfunction
-  map <leader>n :call RenameFile()<cr>
+endfunction
+map <leader>n :call RenameFile()<cr>
 
   """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " MAPS TO JUMP TO SPECIFIC COMMAND TARGETS AND FILES

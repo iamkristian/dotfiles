@@ -12,3 +12,4 @@ home/.IntelliJIdea15/config/idea15.key
 .vim/bundle/vim-ruby/
 .vim/bundle/vim-surround/
 .vim/bundle/emmet-vim/
+.vim/.netrwhist
