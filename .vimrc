@@ -27,6 +27,7 @@ set cc=79
 set virtualedit=all
 set laststatus=2
 set shell=zsh
+set re=2
 filetype plugin indent on
 let mapleader=","
 
@@ -141,7 +142,7 @@ set diffopt=iwhite
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CTRL-p mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set wildignore+=*/.git/*,*/tmp/*,*/vendor/*,*/target/*,*/node_modules/*
+set wildignore+=*/.git/*,*/tmp/*,*/vendor/*,*/target/*,*/node_modules/*,*/deps*,*/_build/*
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
@@ -156,7 +157,7 @@ let g:ctrlp_use_caching=1
 let g:ctrlp_clear_cache_on_exit=1
 let g:ctrlp_cache_dir=$HOME.'/.cache/ctrlp'
 let g:ctrlp_follow_symlinks = 1
-"let g:ctrlp_working_path_mode = 2
+let g:ctrlp_working_path_mode = 'ra'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Surround mappings
@@ -173,7 +174,7 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-autocmd BufWritePre *.ex,*.liquid,*.eex,*.exs,*.rb,*.js,*.erb,*.scss,*.css,*.md,*.vim,*.xml,*.php,*.html,*.ejs,*.rake,*.adoc,*.sieve %s/\s\+$//e
+autocmd BufWritePre *.ex,*.liquid,*.eex,*.exs,*.rb,*.js,*.erb,*.scss,*.css,*.md,*.vim,*.xml,*.php,*.html,*.ejs,*.rake,*.adoc,*.sieve,*.heex %s/\s\+$//e
 autocmd BufNewFile,BufRead *.ejs set filetype=html
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -255,7 +256,9 @@ map <leader>ga :CtrlPClearCache<cr>\|:CtrlP app/assets<cr>
 map <leader>f :CtrlP<cr>
 map <leader>F :CtrlP %%<cr>
 let g:elixir_mix_test_position = "bottom"
-map <leader>tt <Plug>(MixTestRun)
+" map <leader>tt <Plug>(MixTestRun)
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SWITCH BETWEEN TEST AND PRODUCTION CODE

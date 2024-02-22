@@ -11,6 +11,7 @@ plugins=( edkolev/tmuxline.vim.git \
   MaxMEllon/vim-jsx-pretty.git \
   mattn/emmet-vim.git \
   tpope/vim-surround.git \
+  vim-test/vim-test.git \
   elixir-editors/vim-elixir.git
 )
 

@@ -1,2 +1,2 @@
-IEx.Options.set(:colors, [enabled: true])
-IEx.Options.set(:colors, eval_result: :yellow)
+IEx.configure(colors: [enabled: true])
+IEx.configure(colors: [eval_result: :yellow])
