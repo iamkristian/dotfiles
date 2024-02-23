@@ -1,0 +1,20 @@
+# /Users/krra/.config/tmuxinator/cbrn.yml
+
+name: cbrn
+root: ~/code/bruhn_new_tech
+
+windows:
+  - editor:
+      layout: main-horizontal
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
+        - vim
+  - term: 
+  - files: 
+      layout: even-horizontal
+      panes:
+        - cd nextgen-jen
+        - cd nextgen-frontend
+  - server: cd nextgen-frontend && pnpm start

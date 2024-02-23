@@ -1,0 +1,16 @@
+# /Users/krra/.config/tmuxinator/krxio.yml
+
+name: krxio
+root: ~/code/p/iamkristian.github.io
+
+windows:
+  - editor:
+      layout: main-vertical
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
+        - vim
+        - bundle exec jekyll serve -l -D
+        - 
+  - terminal:

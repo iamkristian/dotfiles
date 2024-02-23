@@ -1,0 +1,21 @@
+# /Users/krra/.config/tmuxinator/lunch_app.yml
+
+name: lunch_app
+root: ~/code/lunch_app
+
+windows:
+  - editor:
+      layout: main-vertical
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
+        - vim
+  - terminal: 
+      panes:
+        - iex -S mix
+        -
+  - db: psql -d lunch_app_dev
+  - doc:
+  - server: mix phx.server
+  - iex_server:
