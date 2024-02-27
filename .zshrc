@@ -15,3 +15,4 @@ export SDKMAN_DIR="/Users/ekkrra/.sdkman"
 [[ -s "/Users/ekkrra/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ekkrra/.sdkman/bin/sdkman-init.sh"
 export JAVA_HOME=/Users/ekkrra/.sdkman/candidates/java/current/
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
