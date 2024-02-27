@@ -1,7 +1,7 @@
 # /Users/krra/.config/tmuxinator/dj.yml
 
 name: dj
-root: ~/code/p/dj
+root: ~/code/dj
 
 windows:
   - editor:
