@@ -13,6 +13,7 @@ alias la="ls -la $*"
 # git alias's
 alias gs='git status'
 alias gp='git pull'
+alias gc='git ci $*'
 
 # Shell tools
 alias mytop='top -s1 -o cpu -R -F'

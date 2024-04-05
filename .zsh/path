@@ -5,6 +5,14 @@ if [ -d /usr/local/Cellar ]; then
   export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 fi
 
+# bun completions
+[ -s "/Users/krx/.bun/_bun" ] && source "/Users/krx/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 export PATH=$HOME/bin:$PATH
 export PATH=$PATH:"/usr/local/heroku/bin"
 export PATH=$PATH:".local/lib/aws/bin"
+export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
