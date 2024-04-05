@@ -1,7 +1,7 @@
-# /Users/krra/.config/tmuxinator/dj.yml
+# /Users/kristian/.config/tmuxinator/themovies.yml
 
-name: dj
-root: ~/code/dj
+name: themovies
+root: ~/code/themovies
 
 windows:
   - editor:
@@ -12,11 +12,8 @@ windows:
       panes:
         - vim
         - 
-  - term: 
-      layout: main-vertical
-      panes:
-        -
-        -
-  - iex: iex --dbg pry -S mix
-  - db: psql -d dj_dev
-  - server: source .env.dev && mix phx.server
+  - shell:
+  - console: bundle exec rails c
+  - database: bundle exec rails db
+  - server: foreman start -f Procfile.dev
+  - logs: tail -f log/development.log

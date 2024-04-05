@@ -16,3 +16,10 @@ export SDKMAN_DIR="/Users/ekkrra/.sdkman"
 export JAVA_HOME=/Users/ekkrra/.sdkman/candidates/java/current/
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export PATH="/usr/local/opt/postgresql@15/bin:$PATH"
+
+# bun completions
+[ -s "/Users/kristian/.bun/_bun" ] && source "/Users/kristian/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

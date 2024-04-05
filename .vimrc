@@ -1,9 +1,13 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Setup pathogen, and colors
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
+"runtime bundle/vim-pathogen/autoload/pathogen.vim
+"call pathogen#infect()
+"call pathogen#helptags()
+
+" pack adds
+packloadall
+packadd! everforest
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Setup tabs and indent
@@ -60,7 +64,8 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tags
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set tags=.tags,.gemtags
+" set autochdir
+set tags=tags,./tags
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and fonts
@@ -70,15 +75,21 @@ if has("gui_running")
   set guioptions-=T
   set scrolloff=10
   set background=dark
-  colorscheme mysolarized
+  colorscheme everforest
 else
-  let g:solarized_termtrans=1
-  let g:solarized_termcolors=16 " This will fix the too bright background
+"  let g:solarized_termtrans=1
+"  let g:solarized_termcolors=16 " This will fix the too bright background
+  let g:everforest_background = 'soft'
+  let g:everforest_better_performance = 1
   set t_Co=16
   set scrolloff=10
   set background=dark
-  colorscheme mysolarized
+  colorscheme everforest
 endif
+let g:everforest_background = 'soft'
+let g:everforest_better_performance = 1
+set background=dark
+colorscheme everforest
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc cmds
@@ -125,9 +136,10 @@ endtry
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:airline_theme='luna'
+let g:airline_theme='everforest'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
+" let g:airline#extensions#tmuxline#enabled=0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Rubocop
@@ -170,11 +182,11 @@ let g:surround_35  = "#{\r}"    " #
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Extra whitespaces
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
-autocmd BufWritePre *.ex,*.liquid,*.eex,*.exs,*.rb,*.js,*.erb,*.scss,*.css,*.md,*.vim,*.xml,*.php,*.html,*.ejs,*.rake,*.adoc,*.sieve,*.heex %s/\s\+$//e
+"autocmd BufWinEnter * match ExtraWhitespace /\s\+$\| \+\ze\t/
+"autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+"autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+"autocmd BufWinLeave * call clearmatches()
+autocmd BufWritePre *.ex,*.heex,*.liquid,*.eex,*.exs,*.rb,*.js,*.erb,*.scss,*.css,*.md,*.vim,*.xml,*.php,*.html,*.ejs,*.rake,*.adoc,*.sieve,*.heex %s/\s\+$//e
 autocmd BufNewFile,BufRead *.ejs set filetype=html
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
