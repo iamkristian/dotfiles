@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 # Homebrew
 if [ -d /usr/local/Cellar ]; then
   export PATH=/usr/local/bin:/usr/local/sbin:$PATH
