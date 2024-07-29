@@ -25,7 +25,6 @@ o.nowb=true
 o.noswapfile=true
 o.termguicolors=true
 o.undodir="~/.config/nvim/undodir"
+o.autoindent=autocmd
 
 bo.expandtab=true
-bo.autoindent=true
-
