@@ -208,3 +208,18 @@ require'lualine'.setup {
 	}
 }
 
+
+-------------------------------------------------------------------------
+-- RENAME CURRENT FILE
+-------------------------------------------------------------------------
+function RenameFile()
+  local old_name = vim.fn.expand('%')
+  local new_name = vim.fn.input('New file name: ', vim.fn.expand('%'), 'file')
+  if (new_name ~= '' and new_name ~= old_name) then
+    vim.cmd("exec ':saveas " .. new_name .. "'")
+    vim.cmd("exec ':silent !rm " .. old_name .. "'")
+    vim.api.nvim_command("redraw!") 
+  end
+end
+vim.keymap.set('n', '<leader>n', RenameFile, { desc = "Rename current file" })
+
