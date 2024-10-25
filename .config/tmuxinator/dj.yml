@@ -17,6 +17,6 @@ windows:
       panes:
         -
         -
-  - iex: iex --dbg pry -S mix
+  - iex: TELEMETRY_PORT=9092 iex --dbg pry -S mix
   - db: psql -d dj_dev
   - server: source .env.dev && mix phx.server

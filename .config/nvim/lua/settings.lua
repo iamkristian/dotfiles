@@ -4,6 +4,7 @@ local bo = vim.bo
 
 vim.g.mapleader = "," -- Make sure to set `mapleader` before lazy so your mappings are correct
 vim.g.maplocalleader = "," -- Same for `maplocalleader`
+vim.api.nvim_set_option("clipboard","unnamed")
 
 -- Settings
 o.tabstop=2
@@ -26,5 +27,6 @@ o.noswapfile=true
 o.termguicolors=true
 o.undodir="~/.config/nvim/undodir"
 o.autoindent=autocmd
+o.noswapfile=true
 
 bo.expandtab=true
