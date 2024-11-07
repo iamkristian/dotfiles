@@ -21,12 +21,14 @@ o.winwidth=79
 o.cursorline=cursorcolumn
 o.ruler=true
 o.syntax=on
-o.nobackup=true
-o.nowb=true
-o.noswapfile=true
+-- No backup or swap
+vim.g.nobackup=true
+vim.g.nowb=true
+vim.g.noswapfile=true
+
 o.termguicolors=true
 o.undodir="~/.config/nvim/undodir"
 o.autoindent=autocmd
-o.noswapfile=true
 
 bo.expandtab=true
+

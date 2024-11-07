@@ -1,5 +1,7 @@
 return {
-	{ 'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = { 'nvim-lua/plenary.nvim' }},
+	{ 'nvim-telescope/telescope.nvim', 
+    tag = '0.1.8', 
+    dependencies = { 'nvim-lua/plenary.nvim' }},
 	'neovim/nvim-lspconfig',
   {
     "elixir-tools/elixir-tools.nvim",
@@ -16,7 +18,7 @@ return {
         elixirls = {
           enable = true,
           settings = elixirls.settings {
-            dialyzerEnabled = false,
+            dialyzerEnabled = true,
             enableTestLenses = false,
           },
           on_attach = function(client, bufnr)

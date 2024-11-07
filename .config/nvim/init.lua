@@ -18,10 +18,26 @@ require("lazy").setup("plugins", opts)
 
 -- Telescope settings
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>f', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fG', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>gs', builtin.git_status, {})
+vim.keymap.set('n', '<leader>pt', builtin.treesitter, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+require('telescope').setup{ 
+  defaults = { 
+    file_ignore_patterns = { 
+      "node_modules",
+      "vendor",
+      "_build"
+    }
+  }
+}
+
+-- Reload init.lua
+vim.keymap.set("n", "<leader><leader>", "<cmd>source $MYVIMRC<cr>", { desc = "Reload init.lua" })
+vim.keymap.set("n", "<leader>v", "<cmd>e $MYVIMRC<cr>", { desc = "Edit init.lua" })
 
 -- Buffers
 vim.keymap.set("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
@@ -30,6 +46,8 @@ vim.keymap.set("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Wi
 
 -- Lazy
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
+
+require('lspconfig').ts_ls.setup{}
 
 local luasnip = require'luasnip'
 local cmp = require'cmp'
