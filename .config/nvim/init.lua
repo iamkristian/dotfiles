@@ -35,7 +35,7 @@ require('telescope').setup{
   }
 }
 
--- Reload init.lua
+-- Actions on init.lua
 vim.keymap.set("n", "<leader><leader>", "<cmd>source $MYVIMRC<cr>", { desc = "Reload init.lua" })
 vim.keymap.set("n", "<leader>v", "<cmd>e $MYVIMRC<cr>", { desc = "Edit init.lua" })
 
@@ -49,17 +49,16 @@ vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
 require('lspconfig').ts_ls.setup{}
 
-local luasnip = require'luasnip'
+local ls = require'luasnip'
 local cmp = require'cmp'
 cmp.setup({
 	snippet = {
 		-- REQUIRED - you must specify a snippet engine
 		expand = function(args)
-			--vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-			luasnip.lsp_expand(args.body) -- For `luasnip` users.
-			-- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-			-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-			-- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
+      local indent_nodes = true
+        ls.lsp_expand(args.body, {
+        indent = indent_nodes,
+      })
 		end,
 	},
 	window = {
@@ -75,8 +74,8 @@ cmp.setup({
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
+      elseif ls.expand_or_jumpable() then
+        ls.expand_or_jump()
       else
         fallback()
       end
@@ -84,8 +83,8 @@ cmp.setup({
     ['<S-Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
+      elseif ls.jumpable(-1) then
+        ls.jump(-1)
       else
         fallback()
       end
@@ -93,14 +92,12 @@ cmp.setup({
 	}),
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
-		-- { name = 'vsnip' }, -- For vsnip users.
-		{ name = 'luasnip' }, -- For luasnip users.
-		-- { name = 'ultisnips' }, -- For ultisnips users.
-		-- { name = 'snippy' }, -- For snippy users.
+		{ name = 'luasnip', option = { use_show_condition = false } }, -- For luasnip users.
 	}, {
 		{ name = 'buffer' },
 	})
 })
+
 -- Treesitter syntax highlighting
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)

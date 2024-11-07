@@ -49,10 +49,15 @@ return {
     end
   },
 	'folke/which-key.nvim',
-  'hrsh7th/nvim-cmp',
+  { 'hrsh7th/nvim-cmp' },
   'hrsh7th/cmp-nvim-lsp',
-  'saadparwaiz1/cmp_luasnip',
-  'L3MON4D3/LuaSnip',
+  { 'L3MON4D3/LuaSnip',
+    lazy = false,
+    dependencies = { "saadparwaiz1/cmp_luasnip" },
+    config = function()
+    require("luasnip.loaders.from_snipmate").load({ paths = "./snippets" })
+    end
+  },
   'nvim-treesitter/nvim-treesitter',
   'windwp/nvim-ts-autotag',
   'elixir-editors/vim-elixir'
