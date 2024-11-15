@@ -47,9 +47,44 @@ vim.keymap.set("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Wi
 -- Lazy
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
-require('lspconfig').ts_ls.setup{}
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+require'lspconfig'.ts_ls.setup{
+  capabilities = capabilities
+}
+
+-- Add additional capabilities supported by nvim-cmp
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+require'lspconfig'.elixirls.setup{
+  cmd = { "/opt/homebrew/bin/elixir-ls" },
+  capabilities = capabilities,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  elixirLS = {
+    dialyzerEnabled = false,
+    fetchDeps = false,
+    enableTestLenses = true
+  };
+}
 
 local ls = require'luasnip'
+ls.setup({
+  load_ft_func =
+      -- Also load both lua and json when a markdown-file is opened,
+      -- javascript for html.
+      -- Other filetypes just load themselves.
+      require("luasnip.extras.filetype_functions").extend_load_ft({
+        markdown = {"lua", "json"},
+        elixir = {"eelixir", "heex"},
+        heex = {"elixir", "html"},
+        html = {"javascript"}
+      })
+  }
+)
 local cmp = require'cmp'
 cmp.setup({
 	snippet = {
@@ -92,7 +127,7 @@ cmp.setup({
 	}),
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
-		{ name = 'luasnip', option = { use_show_condition = false } }, -- For luasnip users.
+		{ name = 'luasnip' }, -- For luasnip users.
 	}, {
 		{ name = 'buffer' },
 	})
@@ -149,71 +184,13 @@ require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
 
-    -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
-    -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
-    -- the name of the parser)
-    -- list of language that will be disabled
-    -- disable = { "c", "rust" },
-    -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
-    disable = function(lang, buf)
-        local max_filesize = 100 * 1024 -- 100 KB
-        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-        if ok and stats and stats.size > max_filesize then
-            return true
-        end
-    end,
-
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = "gnn",
-      node_incremental = "grn",
-      scope_incremental = "grc",
-      node_decremental = "grm",
-    },
-  },
-  textobjects = {
-    move = {
-      enable = true,
-      goto_next_start = { ["]f"] = "@function.outer", ["]c"] = "@class.outer", ["]a"] = "@parameter.inner" },
-      goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer", ["]A"] = "@parameter.inner" },
-      goto_previous_start = { ["[f"] = "@function.outer", ["[c"] = "@class.outer", ["[a"] = "@parameter.inner" },
-      goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer", ["[A"] = "@parameter.inner" },
-    },
-  },
 }
-
-require('nvim-ts-autotag').setup({
-  opts = {
-    -- Defaults
-    enable_close = true, -- Auto close tags
-    enable_rename = true, -- Auto rename pairs of tags
-    enable_close_on_slash = false -- Auto close on trailing </
-  },
-  -- Also override individual filetype configs, these take priority.
-  -- Empty by default, useful if one of the "opts" global settings
-  -- doesn't work well in a specific filetype
-  per_filetype = {
-    ["html"] = {
-      enable_close = false
-    }
-  },
-  aliases = {
-    ["heex"] = "html",
-  }
-})
-local TagConfigs = require("nvim-ts-autotag.config.init")
-TagConfigs:update(TagConfigs:get("html"):override("html", {
-    start_tag_pattern = { "<%=" },
-    end_tag_pattern = { "%>" },
-}))
-
 
 vim.cmd "colorscheme everforest"
 
@@ -223,6 +200,12 @@ require'lualine'.setup {
 	}
 }
 
+--
+-- OPEN FILES IN DIRECTORY OF CURRENT FILE
+--
+-- vim.cmd("exec 'cnoremap %% <C-R>=" .. vim.fn.expand("%:h") .. "/<CR>'")
+-- vim.keymap.set('n', '<leader>s', vim.cmd("exec ':vsplit %%'"), { desc = "Vsplit %%" })
+-- vim.keymap.set('n', '<leader>e', vim.cmd("exec ':tabe %%'"), { desc = "Tabe %%" })
 
 -------------------------------------------------------------------------
 -- RENAME CURRENT FILE
@@ -238,3 +221,17 @@ function RenameFile()
 end
 vim.keymap.set('n', '<leader>n', RenameFile, { desc = "Rename current file" })
 
+--
+-- If Elixir run the tests
+--
+function RunElixirTest()
+  local filename = vim.fn.expand('%')
+  
+  if string.find(filename, "_test.exs") then
+    -- Test for elixir test case
+    vim.cmd("exec 'bel 30 :split | terminal mix test ".. filename .. "'")
+    vim.cmd("exec 'normal 1GG'")
+  end
+end
+
+vim.keymap.set('n', '<leader>t', RunElixirTest, { desc = "Opens test window" })

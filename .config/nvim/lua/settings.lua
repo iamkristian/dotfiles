@@ -7,9 +7,6 @@ vim.g.maplocalleader = "," -- Same for `maplocalleader`
 vim.api.nvim_set_option("clipboard","unnamed")
 
 -- Settings
-o.tabstop=2
-o.shiftwidth=2
-o.expandtab=true
 o.incsearch = true
 o.hlsearch = true
 o.number = true
@@ -28,7 +25,13 @@ vim.g.noswapfile=true
 
 o.termguicolors=true
 o.undodir="~/.config/nvim/undodir"
-o.autoindent=autocmd
 
-bo.expandtab=true
+-- Indent
+o.autoindent=true
+o.smartindent=true
+o.expandtab=true
+o.tabstop=2
+o.shiftwidth=2
 
+-- Shell
+o.shell = "/bin/zsh"

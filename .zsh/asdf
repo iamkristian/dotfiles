@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh

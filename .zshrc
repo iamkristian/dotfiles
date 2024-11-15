@@ -7,6 +7,7 @@ source ~/.zsh/shell
 source ~/.zsh/tmuxinator
 # source ~/.zsh/wifi
 source ~/.zsh/rbenv
+source ~/.zsh/asdf
 source ~/.zsh/nvm
 tmux start-server
 
