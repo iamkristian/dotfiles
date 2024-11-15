@@ -226,7 +226,6 @@ vim.keymap.set('n', '<leader>n', RenameFile, { desc = "Rename current file" })
 --
 function RunElixirTest()
   local filename = vim.fn.expand('%')
-  
   if string.find(filename, "_test.exs") then
     -- Test for elixir test case
     vim.cmd("exec 'bel 30 :split | terminal mix test ".. filename .. "'")
@@ -234,4 +233,14 @@ function RunElixirTest()
   end
 end
 
-vim.keymap.set('n', '<leader>t', RunElixirTest, { desc = "Opens test window" })
+--
+-- If Elixir run the tests
+--
+function RunAllElixirTests()
+  -- Test for elixir test case
+  vim.cmd("exec 'bel 30 :split | terminal mix test'")
+  vim.cmd("exec 'normal 1GG'")
+end
+vim.keymap.set('n', '<leader>t', RunElixirTest, { desc = "Open test window" })
+vim.keymap.set('n', '<leader>T', RunAllElixirTests, { desc = "Run all tests in window" })
+vim.keymap.set('n', '<leader>/', "<Cmd>Neotree<CR>", { desc = "Open neotree"} )
