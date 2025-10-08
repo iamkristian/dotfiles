@@ -30,6 +30,7 @@ require('telescope').setup{
     file_ignore_patterns = { 
       "node_modules",
       "vendor",
+      "deps",
       "_build"
     }
   }
@@ -241,6 +242,17 @@ function RunAllElixirTests()
   vim.cmd("exec 'bel 30 :split | terminal mix test'")
   vim.cmd("exec 'normal 1GG'")
 end
+
+--
+-- Edit new file in directory
+--
+function EditFileInDir()
+  local new_name = vim.fn.input('New file name: ', vim.fn.expand('%:h') .. "/", 'file')
+  vim.cmd("e ".. new_name)
+end
+
 vim.keymap.set('n', '<leader>t', RunElixirTest, { desc = "Open test window" })
 vim.keymap.set('n', '<leader>T', RunAllElixirTests, { desc = "Run all tests in window" })
 vim.keymap.set('n', '<leader>/', "<Cmd>Neotree<CR>", { desc = "Open neotree"} )
+vim.keymap.set('n', '<leader>e', EditFileInDir, { desc = "Edit new file in dir"} )
+

@@ -17,6 +17,11 @@ return {
   },
 	'neovim/nvim-lspconfig',
   { "elixir-tools/elixir-tools.nvim", dependencies = { 'nvim-lua/plenary.nvim' }},
+  { "lukas-reineke/virt-column.nvim", opts = {},
+    config = function()
+      require("virt-column").setup()
+    end
+  },
 	'folke/which-key.nvim',
   'hrsh7th/cmp-nvim-lsp',
   "hrsh7th/cmp-buffer",

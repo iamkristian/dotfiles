@@ -5,6 +5,10 @@ local bo = vim.bo
 vim.g.mapleader = "," -- Make sure to set `mapleader` before lazy so your mappings are correct
 vim.g.maplocalleader = "," -- Same for `maplocalleader`
 vim.api.nvim_set_option("clipboard","unnamed")
+vim.api.nvim_set_option_value("colorcolumn", "79", {})
+vim.api.nvim_set_option_value("cursorline", true, {})
+vim.api.nvim_set_option_value("cursorcolumn", true, {})
+
 
 -- Settings
 o.incsearch = true
@@ -13,9 +17,7 @@ o.number = true
 o.tags="tags","./tags"
 o.ffs=unix,mac,dos
 o.re=2
-o.cc=79
 o.winwidth=79
-o.cursorline=cursorcolumn
 o.ruler=true
 o.syntax=on
 -- No backup or swap
