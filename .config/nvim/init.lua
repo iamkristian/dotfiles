@@ -48,30 +48,35 @@ vim.keymap.set("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Wi
 -- Lazy
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-require'lspconfig'.ts_ls.setup{
-  capabilities = capabilities
-}
+-- LSP
 
--- Add additional capabilities supported by nvim-cmp
+-- Define shared capabilities for nvim-cmp completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-require'lspconfig'.elixirls.setup{
+
+-- TypeScript (tsserver) setup
+vim.lsp.config("ts_ls", {
+  capabilities = capabilities,
+})
+
+-- ElixirLS setup
+vim.lsp.config("elixirls", {
   cmd = { "/opt/homebrew/bin/elixir-ls" },
   capabilities = capabilities,
   flags = {
     debounce_text_changes = 150,
   },
-  elixirLS = {
-    dialyzerEnabled = false,
-    fetchDeps = false,
-    enableTestLenses = true
-  };
-}
+  settings = {
+    elixirLS = {
+      dialyzerEnabled = false,
+      fetchDeps = false,
+      enableTestLenses = true,
+    },
+  },
+})
 
+-- Lua snip
 local ls = require'luasnip'
 ls.setup({
   load_ft_func =
