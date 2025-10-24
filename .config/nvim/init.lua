@@ -3,18 +3,50 @@ require('settings')
 -- Install lazy package manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
 end
 vim.opt.rtp:prepend(lazypath)
+--require("lazy").setup("plugins", opts)
+require("lazy").setup({
+  spec = {
+    -- add LazyVim and import its plugins
+    -- import/override with your plugins
+    { import = "plugins" },
+  },
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+  change_detection = {
+    notify = false,
+  }
+})
 
-require("lazy").setup("plugins", opts)
+-- NvimTree
+require("nvim-tree").setup({
+  sort = {
+    sorter = "case_sensitive",
+  },
+  view = {
+    width = 30,
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
 
 -- Telescope settings
 local builtin = require('telescope.builtin')
@@ -48,6 +80,10 @@ vim.keymap.set("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Wi
 -- Lazy
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
+-- NvimTree
+vim.keymap.set("n", "<leader>/", "<cmd>NvimTreeToggle<cr>", { desc = "Open NvimTree" })
+
+
 -- LSP
 
 -- Define shared capabilities for nvim-cmp completion
@@ -76,21 +112,6 @@ vim.lsp.config("elixirls", {
   },
 })
 
--- Lua snip
-local ls = require'luasnip'
-ls.setup({
-  load_ft_func =
-      -- Also load both lua and json when a markdown-file is opened,
-      -- javascript for html.
-      -- Other filetypes just load themselves.
-      require("luasnip.extras.filetype_functions").extend_load_ft({
-        markdown = {"lua", "json"},
-        elixir = {"eelixir", "heex"},
-        heex = {"elixir", "html"},
-        html = {"javascript"}
-      })
-  }
-)
 local cmp = require'cmp'
 cmp.setup({
 	snippet = {
@@ -258,6 +279,5 @@ end
 
 vim.keymap.set('n', '<leader>t', RunElixirTest, { desc = "Open test window" })
 vim.keymap.set('n', '<leader>T', RunAllElixirTests, { desc = "Run all tests in window" })
-vim.keymap.set('n', '<leader>/', "<Cmd>Neotree<CR>", { desc = "Open neotree"} )
 vim.keymap.set('n', '<leader>e', EditFileInDir, { desc = "Edit new file in dir"} )
 
