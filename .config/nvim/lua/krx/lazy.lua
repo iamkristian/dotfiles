@@ -18,8 +18,8 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     -- import/override with your plugins
-    { import = "plugins" },
     { import = "krx.plugins" },
+    { import = "krx.plugins.lsp" },
   },
   checker = {
     enabled = true,
