@@ -1,6 +1,7 @@
 #!/bin/zsh
 source ~/.zsh/path
 source ~/.zsh/aliases
+source ~/.zsh/func
 # source ~/.zsh/theme
 # source ~/.zsh/oh-my-zsh
 source ~/.zsh/shell
@@ -26,3 +27,7 @@ export NVM_DIR="$HOME/.nvm"
 export DOTNET_ROOT=/opt/homebrew/Cellar/dotnet/8.0.4/libexec/sdk
 export DOTNET_TOOLS=$HOME/.dotnet/tools
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_TOOLS
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
