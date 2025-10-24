@@ -28,19 +28,22 @@ return {
   "hrsh7th/cmp-path",
   "hrsh7th/cmp-cmdline",
   "hrsh7th/nvim-cmp",
-
-
-  { 'L3MON4D3/LuaSnip',
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
     lazy = false,
-    dependencies = { "saadparwaiz1/cmp_luasnip" },
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
     config = function()
-    require("luasnip.loaders.from_snipmate").load({ paths = "./snippets" })
-    end
+      require("nvim-tree").setup {}
+    end,
   },
+
   { "MunifTanjim/nui.nvim", lazy = true },
   {
     "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
+    version = "*",
     dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
