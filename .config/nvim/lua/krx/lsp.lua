@@ -73,4 +73,5 @@ vim.lsp.enable("elixirls");
 vim.lsp.enable("cssls");
 vim.lsp.enable("tailwindcss");
 vim.lsp.enable("html");
+vim.lsp.enable("yamlls");
 
